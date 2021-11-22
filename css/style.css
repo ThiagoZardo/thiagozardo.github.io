@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Cores Utilizadas
+Paleta de Cores: https://coolors.co/00a6fb-0582ca-006494-003554-051923
+
+#00a6fb
+#0582ca
+#006494
+#003554
+#051923
+*/
+
+.center{
+    margin: 0 auto;
+    padding: 0 2%;
+    max-width: 1100px;
+}
+
+.clear{
+    clear: both;
+}
+
+
+header{
+    background-color: #051923;
+    padding: 40px 0;
+    min-height: 420px;
+}
+
+
+
+.logo img{
+    width: 200px;
+    cursor: pointer;
+}
+
+.logo a{
+    text-decoration: none;
+}
+
+.logo i{
+    float: right;
+    padding: 0 10px;
+    font-size: 33px;
+    color: white;
+    cursor: pointer;
+}
+
+.fotoPerfil img{
+    margin-top: 35px;
+    float: right;
+    margin-right: 2%;
+    width: 180px;
+    height: 180px;
+    border-radius: 90px;
+}
+
+
+.sobreMim{
+    margin-top: 80px;
+    color: white;
+}
+
+.sobreMim h1{
+    margin-bottom: 0;
+    font-size: 50px;
+}
+
+.sobreMim h2{
+    color: #00a6fb;
+    margin-top: 0;
+}
+
+.sobreMim p a{
+    text-decoration: none;
+    color: #00a6fb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
