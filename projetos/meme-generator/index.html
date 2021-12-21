@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cfd4e8c865.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+
+    <section class="main">
+
+        <h1 id="title">Gerador de Memes</h1>
+
+        <div class="box-digite-texto">
+            <p class="legenda">Digite aqui uma frase para seu meme</p>
+            <input id="text-input" type="text" maxlength="60">
+        </div>
+        
+        <div class="input">      
+            <input type="file" id="meme-insert" accept="images/*" onchange="exibeImagem(event)">
+        </div>
+
+        <div id="meme-image-container">
+                       
+            <img id="meme-image" width="500px" height="300px">           
+            <h2 id="meme-text"></h2>
+
+        </div><!--meme-image-container-->
+
+        <div class="botoes">
+            <button id="fire" type="button"> Fire</button>
+            <button id="water" type="button"> Water</button>
+            <button id="earth" type="button"> Earth</button>
+        </div>
+
+
+        <div class="memes-prontos">
+            <img id="meme-1" src="imgs/meme1.png" width="100px" height="100px"> 
+            <img id="meme-2" src="imgs/meme2.png" width="100px" height="100px"> 
+            <img id="meme-3" src="imgs/meme3.png" width="100px" height="100px"> 
+            <img id="meme-4" src="imgs/meme4.png" width="100px" height="100px"> 
+        </div>
+
+    </section>
+
+   
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
