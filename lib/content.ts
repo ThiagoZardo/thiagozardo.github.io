@@ -39,19 +39,19 @@ export const profile = {
 
 export const content = {
   pt: {
-    nav: ["Sobre", "Servicos", "Processo", "Projetos", "FAQ", "Contato"],
+    nav: ["Sobre", "Servicos", "Processo", "Experiencia", "FAQ", "Contato"],
     hero: {
       eyebrow: "Sistemas web, automacoes e produtos digitais",
       title: "Thiago Zardo",
       subtitle:
         "Crio sistemas web e automacoes que economizam tempo e aumentam a produtividade de pequenas empresas.",
       primaryCta: "Solicitar orcamento",
-      secondaryCta: "Ver projetos",
+      secondaryCta: "Ver experiencia",
       metrics: [
-        ["4+ anos", "em desenvolvimento full stack"],
-        ["60 mil+", "organizacoes impactadas em produto SaaS"],
+        ["SaaS real", "experiencia em produtos usados por empresas"],
+        ["60 mil+", "organizacoes impactadas em plataforma global"],
         ["-90%", "tempo em simulacao critica otimizada"],
-        ["99,9%", "continuidade operacional em plataforma critica"]
+        ["30%", "reducao de custos de infraestrutura"]
       ]
     },
     about: {
@@ -62,8 +62,8 @@ export const content = {
       bullets: [
         "Experiencia em produtos usados por milhares de usuarios e organizacoes.",
         "Background forte em frontend, backend, mobile, APIs, DevOps e cloud.",
-        "Formacao full stack pela Trybe e Desenvolvimento de Sistemas pela Estacio.",
-        "Postura consultiva para entender processo, gargalo e retorno antes de implementar."
+        "Vivencia com SaaS, ciberseguranca, automacao, mobile, APIs, cloud e sistemas legados.",
+        "Postura consultiva para entender processo, prioridade e retorno antes de implementar."
       ]
     },
     servicesTitle: "Servicos para empresas que querem operar melhor",
@@ -87,51 +87,47 @@ export const content = {
         ["Entrega e evolucao", "Publico, acompanho metricas, corrijo atritos e planejo melhorias."]
       ]
     },
-    projectsTitle: "Projetos em destaque",
+    projectsTitle: "Experiencia em produtos e empresas reais",
     projects: [
       {
-        name: "AutoFlex",
-        tag: "Projeto real",
-        context: "Sistema web e API para gestao operacional de oficinas mecanicas.",
-        problem: "Oficinas pequenas dependem de mensagens soltas, planilhas e controle manual de ordens de servico.",
-        solution: "Aplicacao full stack com fluxo de clientes, veiculos, servicos, status e historico centralizado.",
-        results: "Reduz retrabalho administrativo e entrega uma visao unica da operacao.",
-        tech: ["TypeScript", "React", "Node.js", "API REST"],
-        github: "https://github.com/ThiagoZardo/autoflex-web",
-        demo: "https://github.com/ThiagoZardo/autoflex-api"
+        name: "Mosyle",
+        tag: "Ciberseguranca e Apple Device Management",
+        context: "Plataforma cloud-native para gerenciamento e seguranca de dispositivos Apple.",
+        problem: "Produtos globais precisam evoluir funcionalidades criticas sem comprometer estabilidade, seguranca e continuidade operacional.",
+        solution: "Atuacao full stack em funcionalidades, integracoes e modernizacao de base legada com foco em confiabilidade.",
+        results: "Contribuicao em plataforma usada por mais de 60 mil organizacoes em mais de 100 paises.",
+        tech: ["React Native", "Node.js", "PHP", ".NET", "C#", "AWS", "Microservices"],
+        website: "https://mosyle.com/"
       },
       {
-        name: "RAG Lab",
-        tag: "Projeto real",
-        context: "Laboratorio de IA para busca e respostas com base em documentos.",
-        problem: "Empresas perdem tempo procurando informacao em PDFs, politicas internas e bases dispersas.",
-        solution: "Experimento TypeScript para estruturar consultas, contexto e respostas assistidas por IA.",
-        results: "Base conceitual para assistentes internos, atendimento e automacao de conhecimento.",
-        tech: ["TypeScript", "IA", "RAG", "Node.js"],
-        github: "https://github.com/ThiagoZardo/rag-lab",
-        demo: "https://github.com/ThiagoZardo/rag-lab"
-      },
-      {
-        name: "SolarMarket Platform",
-        tag: "Experiencia profissional",
-        context: "Plataforma SaaS para integradores e distribuidores solares.",
-        problem: "Processos de venda, financiamento, compras e simulacao precisavam de escala e estabilidade.",
-        solution: "Atuacao full stack e DevOps com React, Vue, Node.js, NestJS, microservicos, AWS, GCP e Kubernetes.",
+        name: "SolarMarket",
+        tag: "SaaS e automacao para energia solar",
+        context: "Plataforma para integradores e distribuidores solares com processos de venda, financiamento, compras e simulacao.",
+        problem: "A operacao precisava escalar deploys, reduzir custos e melhorar performance de fluxos criticos.",
+        solution: "Atuacao full stack e DevOps com React, Vue, Node.js, NestJS, AWS, GCP, Docker, Kubernetes e Terraform.",
         results: "Deploys 2x mais frequentes, custos de infraestrutura 30% menores e simulacao critica mais de 90% mais rapida.",
-        tech: ["React", "Node.js", "NestJS", "AWS", "GCP", "Kubernetes"],
-        github: "https://github.com/ThiagoZardo/solar-market",
-        demo: "https://github.com/ThiagoZardo/solar-market"
+        tech: ["TypeScript", "Node.js", "NestJS", "React", "Vue", "AWS", "GCP", "Kubernetes"],
+        website: "https://www.solarmarket.com.br/"
       },
       {
-        name: "ClinicFlow",
-        tag: "Case conceitual",
-        context: "Sistema de agendamento para clinicas e consultorios.",
-        problem: "Recepcao sobrecarregada com confirmacoes, remarcacoes e faltas.",
-        solution: "Agenda online com notificacoes por WhatsApp, painel de pacientes e relatorios de comparecimento.",
-        results: "Menos mensagens manuais, menor taxa de falta e atendimento mais organizado.",
-        tech: ["Next.js", "TypeScript", "PostgreSQL", "WhatsApp API"],
-        github: "https://github.com/ThiagoZardo",
-        demo: "#contact"
+        name: "Control 361",
+        tag: "Desenvolvimento full stack",
+        context: "Empresa de tecnologia e servicos digitais com demandas web, mobile e integracoes.",
+        problem: "Projetos com diferentes stacks exigiam velocidade de entrega e capacidade de atuar entre frontend, backend e mobile.",
+        solution: "Desenvolvimento full stack com React Native, Node.js, PHP, .NET e C#.",
+        results: "Entrega de funcionalidades em ambiente de produto e servicos, conectando experiencia do usuario e regras de negocio.",
+        tech: ["React Native", "Node.js", "PHP", ".NET", "C#"],
+        website: "https://control361.com.br/"
+      },
+      {
+        name: "UNEX",
+        tag: "Experiencia internacional",
+        context: "Empresa com presenca digital na Argentina e demandas de tecnologia para negocios.",
+        problem: "Ambientes digitais exigem comunicacao clara, confiabilidade e evolucao continua.",
+        solution: "Experiencia aplicada em desenvolvimento e suporte a solucoes digitais com foco em usabilidade e manutencao.",
+        results: "Vivencia em contexto internacional, colaborando com produtos e processos voltados a operacao real.",
+        tech: ["Web", "Sistemas", "Processos", "Integracoes"],
+        website: "https://unex.ar/"
       }
     ],
     technologies: ["Next.js", "React", "React Native", "TypeScript", "Node.js", "NestJS", "Vue.js", "PHP", ".NET", "C#", "Python", "REST APIs", "GraphQL", "MySQL", "MongoDB", "AWS", "GCP", "Docker", "Kubernetes", "Terraform", "CI/CD", "Jest"],
@@ -156,8 +152,8 @@ export const content = {
       ["O site sera rapido e otimizado para SEO?", "Sim. A base usa Next.js, metadata tecnica, estrutura semantica, responsividade e boas praticas de performance."]
     ],
     cta: {
-      title: "Vamos transformar um gargalo do seu negocio em um sistema simples de usar?",
-      body: "Conte o que hoje toma tempo, gera erro ou fica espalhado em planilhas. Eu ajudo a desenhar uma solucao objetiva.",
+      title: "Vamos simplificar um processo que hoje toma tempo da sua equipe?",
+      body: "Conte onde a operacao trava, quais tarefas ainda sao manuais e que resultado voce espera melhorar. Eu ajudo a desenhar uma solucao objetiva.",
       button: "Falar pelo WhatsApp"
     },
     contact: {
@@ -172,19 +168,19 @@ export const content = {
     footer: "Desenvolvido com Next.js, TypeScript, Tailwind CSS e foco em conversao."
   },
   en: {
-    nav: ["About", "Services", "Process", "Projects", "FAQ", "Contact"],
+    nav: ["About", "Services", "Process", "Experience", "FAQ", "Contact"],
     hero: {
       eyebrow: "Web systems, automation and digital products",
       title: "Thiago Zardo",
       subtitle:
         "I build web systems and automations that save time and increase productivity for small businesses.",
       primaryCta: "Request a quote",
-      secondaryCta: "View projects",
+      secondaryCta: "View experience",
       metrics: [
-        ["4+ years", "in full stack development"],
-        ["60k+", "organizations impacted in SaaS product"],
+        ["Real SaaS", "experience in products used by companies"],
+        ["60k+", "organizations impacted in a global platform"],
         ["-90%", "runtime in optimized critical simulation"],
-        ["99.9%", "operational continuity in critical platform"]
+        ["30%", "reduction in infrastructure costs"]
       ]
     },
     about: {
@@ -195,8 +191,8 @@ export const content = {
       bullets: [
         "Experience with products used by thousands of users and organizations.",
         "Strong background across frontend, backend, mobile, APIs, DevOps and cloud.",
-        "Full stack training at Trybe and Systems Development degree at Estacio.",
-        "Consultative approach to understand workflows, bottlenecks and ROI before implementation."
+        "Hands-on experience with SaaS, cybersecurity, automation, mobile, APIs, cloud and legacy systems.",
+        "Consultative approach to understand workflow, priority and ROI before implementation."
       ]
     },
     servicesTitle: "Services for companies that want to operate better",
@@ -220,51 +216,47 @@ export const content = {
         ["Launch and evolution", "I publish, monitor metrics, fix friction and plan improvements."]
       ]
     },
-    projectsTitle: "Featured projects",
+    projectsTitle: "Experience in real products and companies",
     projects: [
       {
-        name: "AutoFlex",
-        tag: "Real project",
-        context: "Web system and API for repair shop operations.",
-        problem: "Small shops rely on scattered messages, spreadsheets and manual work-order control.",
-        solution: "Full stack app with client, vehicle, service, status and history workflows in one place.",
-        results: "Reduces administrative rework and creates one operational source of truth.",
-        tech: ["TypeScript", "React", "Node.js", "REST API"],
-        github: "https://github.com/ThiagoZardo/autoflex-web",
-        demo: "https://github.com/ThiagoZardo/autoflex-api"
+        name: "Mosyle",
+        tag: "Cybersecurity and Apple Device Management",
+        context: "Cloud-native platform for Apple device management and security.",
+        problem: "Global products need to evolve critical features without compromising stability, security and operational continuity.",
+        solution: "Full stack work on features, integrations and legacy modernization with a reliability focus.",
+        results: "Contribution to a platform used by more than 60,000 organizations in over 100 countries.",
+        tech: ["React Native", "Node.js", "PHP", ".NET", "C#", "AWS", "Microservices"],
+        website: "https://mosyle.com/"
       },
       {
-        name: "RAG Lab",
-        tag: "Real project",
-        context: "AI lab for document-based search and answers.",
-        problem: "Companies waste time searching across PDFs, policies and scattered knowledge bases.",
-        solution: "TypeScript experiment to structure retrieval, context and AI-assisted answers.",
-        results: "A foundation for internal assistants, support workflows and knowledge automation.",
-        tech: ["TypeScript", "AI", "RAG", "Node.js"],
-        github: "https://github.com/ThiagoZardo/rag-lab",
-        demo: "https://github.com/ThiagoZardo/rag-lab"
-      },
-      {
-        name: "SolarMarket Platform",
-        tag: "Professional experience",
-        context: "SaaS platform for solar integrators and distributors.",
-        problem: "Sales, financing, purchasing and simulation processes needed scale and stability.",
-        solution: "Full stack and DevOps work with React, Vue, Node.js, NestJS, microservices, AWS, GCP and Kubernetes.",
+        name: "SolarMarket",
+        tag: "SaaS and automation for solar energy",
+        context: "Platform for solar integrators and distributors across sales, financing, purchasing and simulation workflows.",
+        problem: "The operation needed to scale deployments, reduce costs and improve performance in critical flows.",
+        solution: "Full stack and DevOps work with React, Vue, Node.js, NestJS, AWS, GCP, Docker, Kubernetes and Terraform.",
         results: "2x deployment frequency, 30% lower infrastructure costs and a critical simulation over 90% faster.",
-        tech: ["React", "Node.js", "NestJS", "AWS", "GCP", "Kubernetes"],
-        github: "https://github.com/ThiagoZardo/solar-market",
-        demo: "https://github.com/ThiagoZardo/solar-market"
+        tech: ["TypeScript", "Node.js", "NestJS", "React", "Vue", "AWS", "GCP", "Kubernetes"],
+        website: "https://www.solarmarket.com.br/"
       },
       {
-        name: "ClinicFlow",
-        tag: "Concept case",
-        context: "Scheduling system for clinics and medical offices.",
-        problem: "Front desks are overloaded with confirmations, rescheduling and no-shows.",
-        solution: "Online scheduling with WhatsApp notifications, patient panel and attendance reports.",
-        results: "Less manual messaging, fewer no-shows and a more organized operation.",
-        tech: ["Next.js", "TypeScript", "PostgreSQL", "WhatsApp API"],
-        github: "https://github.com/ThiagoZardo",
-        demo: "#contact"
+        name: "Control 361",
+        tag: "Full stack development",
+        context: "Technology and digital services company with web, mobile and integration demands.",
+        problem: "Projects across different stacks required delivery speed and the ability to work across frontend, backend and mobile.",
+        solution: "Full stack development with React Native, Node.js, PHP, .NET and C#.",
+        results: "Feature delivery in product and services environments, connecting user experience and business rules.",
+        tech: ["React Native", "Node.js", "PHP", ".NET", "C#"],
+        website: "https://control361.com.br/"
+      },
+      {
+        name: "UNEX",
+        tag: "International experience",
+        context: "Company with digital presence in Argentina and technology demands for business operations.",
+        problem: "Digital environments require clear communication, reliability and continuous evolution.",
+        solution: "Applied experience in development and support for digital solutions focused on usability and maintenance.",
+        results: "Experience in an international context, collaborating with products and processes tied to real operations.",
+        tech: ["Web", "Systems", "Processes", "Integrations"],
+        website: "https://unex.ar/"
       }
     ],
     technologies: ["Next.js", "React", "React Native", "TypeScript", "Node.js", "NestJS", "Vue.js", "PHP", ".NET", "C#", "Python", "REST APIs", "GraphQL", "MySQL", "MongoDB", "AWS", "GCP", "Docker", "Kubernetes", "Terraform", "CI/CD", "Jest"],
@@ -289,8 +281,8 @@ export const content = {
       ["Will the site be fast and SEO optimized?", "Yes. The foundation uses Next.js, technical metadata, semantic structure, responsiveness and performance best practices."]
     ],
     cta: {
-      title: "Let's turn one business bottleneck into a simple system your team can actually use.",
-      body: "Tell me what currently takes time, creates errors or lives in spreadsheets. I will help shape an objective solution.",
+      title: "Let's simplify a process that currently takes time from your team.",
+      body: "Tell me where the operation slows down, which tasks are still manual and what result you want to improve. I will help shape an objective solution.",
       button: "Message on WhatsApp"
     },
     contact: {
@@ -305,19 +297,19 @@ export const content = {
     footer: "Built with Next.js, TypeScript, Tailwind CSS and conversion-first thinking."
   },
   es: {
-    nav: ["Sobre mi", "Servicios", "Proceso", "Proyectos", "FAQ", "Contacto"],
+    nav: ["Sobre mi", "Servicios", "Proceso", "Experiencia", "FAQ", "Contacto"],
     hero: {
       eyebrow: "Sistemas web, automatizaciones y productos digitales",
       title: "Thiago Zardo",
       subtitle:
         "Creo sistemas web y automatizaciones que ahorran tiempo y aumentan la productividad de pequenas empresas.",
       primaryCta: "Solicitar presupuesto",
-      secondaryCta: "Ver proyectos",
+      secondaryCta: "Ver experiencia",
       metrics: [
-        ["4+ anos", "en desarrollo full stack"],
-        ["60 mil+", "organizaciones impactadas en producto SaaS"],
+        ["SaaS real", "experiencia en productos usados por empresas"],
+        ["60 mil+", "organizaciones impactadas en plataforma global"],
         ["-90%", "tiempo en simulacion critica optimizada"],
-        ["99,9%", "continuidad operativa en plataforma critica"]
+        ["30%", "reduccion de costos de infraestructura"]
       ]
     },
     about: {
@@ -328,8 +320,8 @@ export const content = {
       bullets: [
         "Experiencia en productos usados por miles de usuarios y organizaciones.",
         "Base solida en frontend, backend, mobile, APIs, DevOps y cloud.",
-        "Formacion full stack en Trybe y Desarrollo de Sistemas en Estacio.",
-        "Enfoque consultivo para entender procesos, cuellos de botella y retorno antes de implementar."
+        "Experiencia practica con SaaS, ciberseguridad, automatizacion, mobile, APIs, cloud y sistemas legados.",
+        "Enfoque consultivo para entender procesos, prioridades y retorno antes de implementar."
       ]
     },
     servicesTitle: "Servicios para empresas que quieren operar mejor",
@@ -353,51 +345,47 @@ export const content = {
         ["Entrega y evolucion", "Publico, acompanho metricas, corrijo fricciones y planifico mejoras."]
       ]
     },
-    projectsTitle: "Proyectos destacados",
+    projectsTitle: "Experiencia en productos y empresas reales",
     projects: [
       {
-        name: "AutoFlex",
-        tag: "Proyecto real",
-        context: "Sistema web y API para gestion operativa de talleres mecanicos.",
-        problem: "Talleres pequenos dependen de mensajes dispersos, planillas y control manual de ordenes de servicio.",
-        solution: "Aplicacion full stack con flujo de clientes, vehiculos, servicios, estados e historial centralizado.",
-        results: "Reduce retrabajo administrativo y entrega una vision unica de la operacion.",
-        tech: ["TypeScript", "React", "Node.js", "API REST"],
-        github: "https://github.com/ThiagoZardo/autoflex-web",
-        demo: "https://github.com/ThiagoZardo/autoflex-api"
+        name: "Mosyle",
+        tag: "Ciberseguridad y Apple Device Management",
+        context: "Plataforma cloud-native para gestion y seguridad de dispositivos Apple.",
+        problem: "Productos globales necesitan evolucionar funcionalidades criticas sin comprometer estabilidad, seguridad y continuidad operativa.",
+        solution: "Actuacion full stack en funcionalidades, integraciones y modernizacion de base legada con foco en confiabilidad.",
+        results: "Contribucion en plataforma usada por mas de 60 mil organizaciones en mas de 100 paises.",
+        tech: ["React Native", "Node.js", "PHP", ".NET", "C#", "AWS", "Microservices"],
+        website: "https://mosyle.com/"
       },
       {
-        name: "RAG Lab",
-        tag: "Proyecto real",
-        context: "Laboratorio de IA para busqueda y respuestas basadas en documentos.",
-        problem: "Empresas pierden tiempo buscando informacion en PDFs, politicas internas y bases dispersas.",
-        solution: "Experimento TypeScript para estructurar consultas, contexto y respuestas asistidas por IA.",
-        results: "Base conceptual para asistentes internos, soporte y automatizacion del conocimiento.",
-        tech: ["TypeScript", "IA", "RAG", "Node.js"],
-        github: "https://github.com/ThiagoZardo/rag-lab",
-        demo: "https://github.com/ThiagoZardo/rag-lab"
-      },
-      {
-        name: "SolarMarket Platform",
-        tag: "Experiencia profesional",
-        context: "Plataforma SaaS para integradores y distribuidores solares.",
-        problem: "Procesos de venta, financiamiento, compras y simulacion necesitaban escala y estabilidad.",
-        solution: "Actuacion full stack y DevOps con React, Vue, Node.js, NestJS, microservicios, AWS, GCP y Kubernetes.",
+        name: "SolarMarket",
+        tag: "SaaS y automatizacion para energia solar",
+        context: "Plataforma para integradores y distribuidores solares con procesos de venta, financiamiento, compras y simulacion.",
+        problem: "La operacion necesitaba escalar deploys, reducir costos y mejorar performance en flujos criticos.",
+        solution: "Actuacion full stack y DevOps con React, Vue, Node.js, NestJS, AWS, GCP, Docker, Kubernetes y Terraform.",
         results: "Deploys 2x mas frecuentes, costos de infraestructura 30% menores y simulacion critica mas de 90% mas rapida.",
-        tech: ["React", "Node.js", "NestJS", "AWS", "GCP", "Kubernetes"],
-        github: "https://github.com/ThiagoZardo/solar-market",
-        demo: "https://github.com/ThiagoZardo/solar-market"
+        tech: ["TypeScript", "Node.js", "NestJS", "React", "Vue", "AWS", "GCP", "Kubernetes"],
+        website: "https://www.solarmarket.com.br/"
       },
       {
-        name: "ClinicFlow",
-        tag: "Case conceptual",
-        context: "Sistema de agenda para clinicas y consultorios.",
-        problem: "Recepciones sobrecargadas con confirmaciones, remarcaciones y ausencias.",
-        solution: "Agenda online con notificaciones por WhatsApp, panel de pacientes e informes de asistencia.",
-        results: "Menos mensajes manuales, menor tasa de ausencias y atencion mas organizada.",
-        tech: ["Next.js", "TypeScript", "PostgreSQL", "WhatsApp API"],
-        github: "https://github.com/ThiagoZardo",
-        demo: "#contact"
+        name: "Control 361",
+        tag: "Desarrollo full stack",
+        context: "Empresa de tecnologia y servicios digitales con demandas web, mobile e integraciones.",
+        problem: "Proyectos con diferentes stacks exigian velocidad de entrega y capacidad de actuar entre frontend, backend y mobile.",
+        solution: "Desarrollo full stack con React Native, Node.js, PHP, .NET y C#.",
+        results: "Entrega de funcionalidades en ambiente de producto y servicios, conectando experiencia de usuario y reglas de negocio.",
+        tech: ["React Native", "Node.js", "PHP", ".NET", "C#"],
+        website: "https://control361.com.br/"
+      },
+      {
+        name: "UNEX",
+        tag: "Experiencia internacional",
+        context: "Empresa con presencia digital en Argentina y demandas de tecnologia para negocios.",
+        problem: "Ambientes digitales exigen comunicacion clara, confiabilidad y evolucion continua.",
+        solution: "Experiencia aplicada en desarrollo y soporte a soluciones digitales con foco en usabilidad y mantenimiento.",
+        results: "Vivencia en contexto internacional, colaborando con productos y procesos orientados a operacion real.",
+        tech: ["Web", "Sistemas", "Procesos", "Integraciones"],
+        website: "https://unex.ar/"
       }
     ],
     technologies: ["Next.js", "React", "React Native", "TypeScript", "Node.js", "NestJS", "Vue.js", "PHP", ".NET", "C#", "Python", "REST APIs", "GraphQL", "MySQL", "MongoDB", "AWS", "GCP", "Docker", "Kubernetes", "Terraform", "CI/CD", "Jest"],
@@ -422,8 +410,8 @@ export const content = {
       ["El sitio sera rapido y optimizado para SEO?", "Si. La base usa Next.js, metadata tecnica, estructura semantica, responsividad y buenas practicas de performance."]
     ],
     cta: {
-      title: "Vamos a transformar un cuello de botella de tu negocio en un sistema simple de usar?",
-      body: "Cuentame que hoy consume tiempo, genera errores o queda disperso en planillas. Te ayudo a disenar una solucion objetiva.",
+      title: "Vamos a simplificar un proceso que hoy le quita tiempo a tu equipo?",
+      body: "Cuentame donde la operacion se frena, que tareas siguen siendo manuales y que resultado quieres mejorar. Te ayudo a disenar una solucion objetiva.",
       button: "Hablar por WhatsApp"
     },
     contact: {

@@ -5,7 +5,6 @@ import {
   BriefcaseBusiness,
   CheckCircle2,
   ExternalLink,
-  Github,
   Languages,
   Linkedin,
   Mail,
@@ -103,9 +102,9 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
                 <Linkedin className="size-4 text-accent" />
                 LinkedIn
               </a>
-              <a className="inline-flex items-center gap-2 hover:text-foreground" href={profile.github} target="_blank" rel="noreferrer">
-                <Github className="size-4 text-accent" />
-                GitHub
+              <a className="inline-flex items-center gap-2 hover:text-foreground" href={`mailto:${profile.email}`}>
+                <Mail className="size-4 text-accent" />
+                {profile.email}
               </a>
             </div>
           </FadeIn>
@@ -125,7 +124,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
                   <BriefcaseBusiness className="size-6" />
                 </div>
                 <div>
-                  <p className="font-semibold">Mosyle, SolarMarket, Control 361</p>
+                  <p className="font-semibold">Mosyle, SolarMarket, Control 361, UNEX</p>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">
                     {locale === "pt"
                       ? "Experiencia em SaaS, ciberseguranca, microservicos, DevOps, mobile, sistemas legados e automacao."
@@ -216,15 +215,9 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
                   </div>
                   <div className="mt-6 flex gap-3">
                     <Button asChild variant="secondary">
-                      <a href={project.github} target="_blank" rel="noreferrer">
-                        <Github className="size-4" />
-                        GitHub
-                      </a>
-                    </Button>
-                    <Button asChild variant="ghost">
-                      <a href={project.demo} target={project.demo.startsWith("#") ? undefined : "_blank"} rel="noreferrer">
+                      <a href={project.website} target="_blank" rel="noreferrer">
                         <ExternalLink className="size-4" />
-                        Demo
+                        {locale === "pt" ? "Ver site" : locale === "es" ? "Ver sitio" : "Visit site"}
                       </a>
                     </Button>
                   </div>
