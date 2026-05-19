@@ -88,7 +88,7 @@ export default async function LocalePage({ params }: PageProps) {
       "@type": "PostalAddress",
       addressCountry: "BR"
     },
-    sameAs: [profile.github, profile.linkedin],
+    sameAs: [profile.linkedin],
     areaServed: ["Brazil", "United States", "Remote"],
     serviceType: t.services.map(([service]) => service)
   };

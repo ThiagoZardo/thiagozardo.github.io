@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Desenvolvedor full stack freelancer para sites, landing pages, sistemas web, dashboards, automacoes e integracoes com APIs.",
   applicationName: "Thiago Zardo Portfolio",
-  authors: [{ name: "Thiago Zardo", url: "https://github.com/ThiagoZardo" }],
+  authors: [{ name: "Thiago Zardo", url: "https://www.linkedin.com/in/thiago-jarilho-zardo/" }],
   creator: "Thiago Zardo",
   publisher: "Thiago Zardo",
   alternates: {

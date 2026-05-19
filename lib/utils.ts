@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const siteUrl = "https://thiagozardo.dev";
+export const siteUrl = "https://thiagozardo.github.io";
 
 export function whatsappUrl(locale: "pt" | "en" | "es") {
   const messages = {

@@ -28,7 +28,6 @@ export const profile = {
   },
   email: "tzardo.developer@gmail.com",
   phone: "+55 13 98877-0538",
-  github: "https://github.com/ThiagoZardo",
   linkedin: "https://www.linkedin.com/in/thiago-jarilho-zardo/",
   location: {
     pt: "Brasil, GMT-3",
