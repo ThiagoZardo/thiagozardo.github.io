@@ -133,13 +133,31 @@ export const content = {
     testimonials: [
       {
         quote:
-          "Thiago e um desenvolvedor extremamente dedicado e comprometido com a qualidade das entregas, com responsabilidade sobre metas e prazos.",
+          "Desenvolvedor extremamente dedicado e comprometido com a qualidade das entregas.",
         author: "Caique Rechi",
         role: "Recomendacao no LinkedIn"
       },
       {
         quote:
-          "Sempre disposto a ajudar e colaborar com a equipe, teve papel fundamental nas areas de Desenvolvimento e DevOps.",
+          "Grande responsabilidade com metas e prazos, mantendo consistencia mesmo em cenarios desafiadores.",
+        author: "Caique Rechi",
+        role: "Recomendacao no LinkedIn"
+      },
+      {
+        quote:
+          "Busca constante por evolucao, novas tecnologias, boas praticas e formas mais eficientes de construir solucoes.",
+        author: "Caique Rechi",
+        role: "Recomendacao no LinkedIn"
+      },
+      {
+        quote:
+          "Sempre disposto a ajudar e colaborar com a equipe.",
+        author: "Leonardo Henrique D.",
+        role: "Recomendacao no LinkedIn"
+      },
+      {
+        quote:
+          "Papel fundamental nas areas de Desenvolvimento e DevOps, sendo peca-chave para o sucesso dos projetos.",
         author: "Leonardo Henrique D.",
         role: "Recomendacao no LinkedIn"
       }
@@ -262,13 +280,31 @@ export const content = {
     testimonials: [
       {
         quote:
-          "Thiago is extremely dedicated and committed to delivery quality, with strong responsibility around goals and deadlines.",
+          "Extremely dedicated and committed to delivery quality.",
         author: "Caique Rechi",
         role: "LinkedIn recommendation"
       },
       {
         quote:
-          "Always willing to help and collaborate with the team, he played a key role in Development and DevOps.",
+          "Strong responsibility around goals and deadlines, keeping consistency even in challenging scenarios.",
+        author: "Caique Rechi",
+        role: "LinkedIn recommendation"
+      },
+      {
+        quote:
+          "Constantly seeks growth, new technologies, best practices and more efficient ways to build solutions.",
+        author: "Caique Rechi",
+        role: "LinkedIn recommendation"
+      },
+      {
+        quote:
+          "Always willing to help and collaborate with the team.",
+        author: "Leonardo Henrique D.",
+        role: "LinkedIn recommendation"
+      },
+      {
+        quote:
+          "Played a key role in Development and DevOps, contributing directly to project success.",
         author: "Leonardo Henrique D.",
         role: "LinkedIn recommendation"
       }
@@ -391,13 +427,31 @@ export const content = {
     testimonials: [
       {
         quote:
-          "Thiago es un desarrollador extremadamente dedicado y comprometido con la calidad de las entregas, con responsabilidad sobre metas y plazos.",
+          "Desarrollador extremadamente dedicado y comprometido con la calidad de las entregas.",
         author: "Caique Rechi",
         role: "Recomendacion en LinkedIn"
       },
       {
         quote:
-          "Siempre dispuesto a ayudar y colaborar con el equipo, tuvo un papel fundamental en Desarrollo y DevOps.",
+          "Gran responsabilidad con metas y plazos, manteniendo consistencia incluso en escenarios desafiantes.",
+        author: "Caique Rechi",
+        role: "Recomendacion en LinkedIn"
+      },
+      {
+        quote:
+          "Busca constante de evolucion, nuevas tecnologias, buenas practicas y formas mas eficientes de construir soluciones.",
+        author: "Caique Rechi",
+        role: "Recomendacion en LinkedIn"
+      },
+      {
+        quote:
+          "Siempre dispuesto a ayudar y colaborar con el equipo.",
+        author: "Leonardo Henrique D.",
+        role: "Recomendacion en LinkedIn"
+      },
+      {
+        quote:
+          "Papel fundamental en Desarrollo y DevOps, siendo clave para el exito de los proyectos.",
         author: "Leonardo Henrique D.",
         role: "Recomendacion en LinkedIn"
       }

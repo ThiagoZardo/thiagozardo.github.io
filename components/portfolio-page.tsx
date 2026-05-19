@@ -17,6 +17,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ContactForm } from "@/components/sections/contact-form";
+import { TestimonialCarousel } from "@/components/sections/testimonial-carousel";
 import { FadeIn } from "@/components/common/motion";
 import { FloatingActions } from "@/components/common/floating-actions";
 import { content, locales, profile, type Locale } from "@/lib/content";
@@ -242,15 +243,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
 
         <Section id="testimonials">
           <FadeIn>
-            <div className="grid gap-5 md:grid-cols-2">
-              {t.testimonials.map((testimonial) => (
-                <Card key={testimonial.author} className="p-6">
-                  <p className="text-lg leading-8 text-foreground">"{testimonial.quote}"</p>
-                  <p className="mt-5 font-semibold">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </Card>
-              ))}
-            </div>
+            <TestimonialCarousel testimonials={t.testimonials} locale={locale} />
           </FadeIn>
         </Section>
 
