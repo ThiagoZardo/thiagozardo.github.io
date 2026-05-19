@@ -12,4 +12,10 @@
 <changefreq>monthly</changefreq>
 <priority>0.9</priority>
 </url>
+<url>
+<loc>https://thiagozardo.dev/es</loc>
+<lastmod>2026-05-19T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
 </urlset>
