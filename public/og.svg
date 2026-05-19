@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#050507"/>
+  <circle cx="170" cy="90" r="320" fill="#5ee0c2" opacity="0.14"/>
+  <circle cx="1010" cy="110" r="330" fill="#f2c66d" opacity="0.12"/>
+  <text x="72" y="132" fill="#f2c66d" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Full Stack Freelancer</text>
+  <text x="72" y="286" fill="#f4f2ed" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="800">Thiago Zardo</text>
+  <text x="72" y="370" fill="#c0c3bd" font-family="Inter, Arial, sans-serif" font-size="34">Sistemas web, dashboards, automacoes</text>
+  <text x="72" y="420" fill="#c0c3bd" font-family="Inter, Arial, sans-serif" font-size="34">e integracoes com APIs para pequenas empresas.</text>
+  <rect x="72" y="500" width="302" height="58" rx="8" fill="#f2c66d"/>
+  <text x="100" y="538" fill="#120d05" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">thiagozardo.github.io</text>
+</svg>
