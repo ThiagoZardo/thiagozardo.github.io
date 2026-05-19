@@ -133,33 +133,27 @@ export const content = {
     testimonials: [
       {
         quote:
-          "Desenvolvedor extremamente dedicado e comprometido com a qualidade das entregas.",
+          "Desenvolvedor dedicado, comprometido com a qualidade das entregas e com grande responsabilidade sobre metas e prazos.",
         author: "Caique Rechi",
-        role: "Recomendacao no LinkedIn"
+        role: "Backend Developer PHP Pleno"
       },
       {
         quote:
-          "Grande responsabilidade com metas e prazos, mantendo consistencia mesmo em cenarios desafiadores.",
-        author: "Caique Rechi",
-        role: "Recomendacao no LinkedIn"
+          "Profissional excepcional, sempre disposto a ajudar e peça-chave nas áreas de Desenvolvimento e DevOps.",
+        author: "Leonardo Henrique Da Silva Paixao",
+        role: "QA Engineer Pleno"
       },
       {
         quote:
-          "Busca constante por evolucao, novas tecnologias, boas praticas e formas mais eficientes de construir solucoes.",
-        author: "Caique Rechi",
-        role: "Recomendacao no LinkedIn"
+          "Profissional versátil, com progresso notável e capacidade de atuar em back end, front end e desenvolvimento mobile.",
+        author: "Jonathan Cardoso",
+        role: "Full Stack Software Engineer"
       },
       {
         quote:
-          "Sempre disposto a ajudar e colaborar com a equipe.",
-        author: "Leonardo Henrique D.",
-        role: "Recomendacao no LinkedIn"
-      },
-      {
-        quote:
-          "Papel fundamental nas areas de Desenvolvimento e DevOps, sendo peca-chave para o sucesso dos projetos.",
-        author: "Leonardo Henrique D.",
-        role: "Recomendacao no LinkedIn"
+          "Fundamental para o projeto, guiando dúvidas do grupo, apoiando a equipe e demonstrando forte habilidade em JavaScript e React.",
+        author: "Arthur Barros",
+        role: "Full-Stack Developer"
       }
     ],
     faq: [
@@ -280,33 +274,27 @@ export const content = {
     testimonials: [
       {
         quote:
-          "Extremely dedicated and committed to delivery quality.",
+          "Dedicated developer, committed to delivery quality and highly responsible with goals and deadlines.",
         author: "Caique Rechi",
-        role: "LinkedIn recommendation"
+        role: "Backend Developer PHP Pleno"
       },
       {
         quote:
-          "Strong responsibility around goals and deadlines, keeping consistency even in challenging scenarios.",
-        author: "Caique Rechi",
-        role: "LinkedIn recommendation"
+          "Exceptional professional, always willing to help and a key contributor across Development and DevOps.",
+        author: "Leonardo Henrique Da Silva Paixao",
+        role: "QA Engineer Pleno"
       },
       {
         quote:
-          "Constantly seeks growth, new technologies, best practices and more efficient ways to build solutions.",
-        author: "Caique Rechi",
-        role: "LinkedIn recommendation"
+          "Versatile professional with remarkable progress and confidence across back end, front end and mobile development.",
+        author: "Jonathan Cardoso",
+        role: "Full Stack Software Engineer"
       },
       {
         quote:
-          "Always willing to help and collaborate with the team.",
-        author: "Leonardo Henrique D.",
-        role: "LinkedIn recommendation"
-      },
-      {
-        quote:
-          "Played a key role in Development and DevOps, contributing directly to project success.",
-        author: "Leonardo Henrique D.",
-        role: "LinkedIn recommendation"
+          "Fundamental to the project, guiding the team, answering questions and showing strong JavaScript and React skills.",
+        author: "Arthur Barros",
+        role: "Full-Stack Developer"
       }
     ],
     faq: [
@@ -427,33 +415,27 @@ export const content = {
     testimonials: [
       {
         quote:
-          "Desarrollador extremadamente dedicado y comprometido con la calidad de las entregas.",
+          "Desarrollador dedicado, comprometido con la calidad de las entregas y responsable con metas y plazos.",
         author: "Caique Rechi",
-        role: "Recomendacion en LinkedIn"
+        role: "Backend Developer PHP Pleno"
       },
       {
         quote:
-          "Gran responsabilidad con metas y plazos, manteniendo consistencia incluso en escenarios desafiantes.",
-        author: "Caique Rechi",
-        role: "Recomendacion en LinkedIn"
+          "Profesional excepcional, siempre dispuesto a ayudar y pieza clave en Desarrollo y DevOps.",
+        author: "Leonardo Henrique Da Silva Paixao",
+        role: "QA Engineer Pleno"
       },
       {
         quote:
-          "Busca constante de evolucion, nuevas tecnologias, buenas practicas y formas mas eficientes de construir soluciones.",
-        author: "Caique Rechi",
-        role: "Recomendacion en LinkedIn"
+          "Profesional versatil, con progreso notable y capacidad para actuar en back end, front end y mobile.",
+        author: "Jonathan Cardoso",
+        role: "Full Stack Software Engineer"
       },
       {
         quote:
-          "Siempre dispuesto a ayudar y colaborar con el equipo.",
-        author: "Leonardo Henrique D.",
-        role: "Recomendacion en LinkedIn"
-      },
-      {
-        quote:
-          "Papel fundamental en Desarrollo y DevOps, siendo clave para el exito de los proyectos.",
-        author: "Leonardo Henrique D.",
-        role: "Recomendacion en LinkedIn"
+          "Fundamental para el proyecto, guiando dudas del grupo y demostrando fuerte habilidad en JavaScript y React.",
+        author: "Arthur Barros",
+        role: "Full-Stack Developer"
       }
     ],
     faq: [

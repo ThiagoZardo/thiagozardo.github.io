@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://thiagozardo.dev"),
+  metadataBase: new URL("https://thiagozardo.github.io"),
   title: {
     default: "Thiago Zardo | Desenvolvedor Full Stack Freelancer",
     template: "%s | Thiago Zardo"
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://thiagozardo.dev/pt",
+    url: "https://thiagozardo.github.io/pt",
     siteName: "Thiago Zardo",
     title: "Thiago Zardo | Desenvolvedor Full Stack Freelancer",
     description:
