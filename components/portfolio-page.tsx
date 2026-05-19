@@ -20,14 +20,13 @@ import { Card } from "@/components/ui/card";
 import { ContactForm } from "@/components/sections/contact-form";
 import { FadeIn } from "@/components/common/motion";
 import { FloatingActions } from "@/components/common/floating-actions";
-import { content, profile, type Locale } from "@/lib/content";
+import { content, locales, profile, type Locale } from "@/lib/content";
 import { whatsappUrl } from "@/lib/utils";
 
 const navIds = ["about", "services", "process", "projects", "faq", "contact"];
 
 export function PortfolioPage({ locale }: { locale: Locale }) {
   const t = content[locale];
-  const otherLocale = locale === "pt" ? "en" : "pt";
 
   return (
     <>
@@ -47,8 +46,21 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <Button asChild variant="ghost" size="icon" aria-label={locale === "pt" ? "Ver em ingles" : "View in Portuguese"}>
-              <Link href={`/${otherLocale}`}>
+            <div className="hidden items-center gap-1 rounded-md border border-border bg-white/[0.03] p-1 sm:flex" aria-label="Language selector">
+              {locales.map((item) => (
+                <Link
+                  key={item}
+                  href={`/${item}`}
+                  className={`rounded px-2.5 py-1.5 text-xs font-semibold uppercase transition ${
+                    item === locale ? "bg-primary text-[#120d05]" : "text-muted-foreground hover:bg-white/[0.06] hover:text-foreground"
+                  }`}
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
+            <Button asChild variant="ghost" size="icon" aria-label="Languages">
+              <Link href={locale === "pt" ? "/en" : locale === "en" ? "/es" : "/pt"}>
                 <Languages className="size-5" />
               </Link>
             </Button>
@@ -117,7 +129,9 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">
                     {locale === "pt"
                       ? "Experiencia em SaaS, ciberseguranca, microservicos, DevOps, mobile, sistemas legados e automacao."
-                      : "Experience across SaaS, cybersecurity, microservices, DevOps, mobile, legacy systems and automation."}
+                      : locale === "es"
+                        ? "Experiencia en SaaS, ciberseguridad, microservicios, DevOps, mobile, sistemas legados y automatizacion."
+                        : "Experience across SaaS, cybersecurity, microservices, DevOps, mobile, legacy systems and automation."}
                   </p>
                 </div>
               </div>
@@ -190,10 +204,10 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
                     <Badge>{project.tag}</Badge>
                   </div>
                   <dl className="mt-6 grid gap-4 text-sm leading-6">
-                    <ProjectRow label={locale === "pt" ? "Contexto" : "Context"} value={project.context} />
-                    <ProjectRow label={locale === "pt" ? "Problema" : "Problem"} value={project.problem} />
-                    <ProjectRow label={locale === "pt" ? "Solucao" : "Solution"} value={project.solution} />
-                    <ProjectRow label={locale === "pt" ? "Resultados" : "Results"} value={project.results} />
+                    <ProjectRow label={locale === "pt" ? "Contexto" : locale === "es" ? "Contexto" : "Context"} value={project.context} />
+                    <ProjectRow label={locale === "pt" ? "Problema" : locale === "es" ? "Problema" : "Problem"} value={project.problem} />
+                    <ProjectRow label={locale === "pt" ? "Solucao" : locale === "es" ? "Solucion" : "Solution"} value={project.solution} />
+                    <ProjectRow label={locale === "pt" ? "Resultados" : locale === "es" ? "Resultados" : "Results"} value={project.results} />
                   </dl>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {project.tech.map((tech) => (

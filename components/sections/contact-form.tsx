@@ -19,7 +19,7 @@ export function ContactForm({ locale, labels }: { locale: Locale; labels: Labels
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    const subject = locale === "pt" ? "Solicitacao de orcamento" : "Quote request";
+    const subject = locale === "pt" ? "Solicitacao de orcamento" : locale === "es" ? "Solicitud de presupuesto" : "Quote request";
     const body = [
       `${labels.name}: ${form.get("name")}`,
       `${labels.email}: ${form.get("email")}`,
