@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://thiagozardo.dev/sitemap.xml
+Sitemap: https://thiagozardo.github.io/sitemap.xml
