@@ -15,15 +15,16 @@ import {
   Wrench
 } from "lucide-react";
 
-export type Locale = "pt" | "en";
+export type Locale = "pt" | "en" | "es";
 
-export const locales: Locale[] = ["pt", "en"];
+export const locales: Locale[] = ["pt", "en", "es"];
 
 export const profile = {
   name: "Thiago Zardo",
   role: {
     pt: "Desenvolvedor Full Stack Freelancer",
-    en: "Freelance Full Stack Developer"
+    en: "Freelance Full Stack Developer",
+    es: "Desarrollador Full Stack Freelancer"
   },
   email: "tzardo.developer@gmail.com",
   phone: "+55 13 98877-0538",
@@ -31,7 +32,8 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/thiago-jarilho-zardo/",
   location: {
     pt: "Brasil, GMT-3",
-    en: "Brazil, GMT-3"
+    en: "Brazil, GMT-3",
+    es: "Brasil, GMT-3"
   }
 };
 
@@ -301,6 +303,139 @@ export const content = {
       submit: "Send by email"
     },
     footer: "Built with Next.js, TypeScript, Tailwind CSS and conversion-first thinking."
+  },
+  es: {
+    nav: ["Sobre mi", "Servicios", "Proceso", "Proyectos", "FAQ", "Contacto"],
+    hero: {
+      eyebrow: "Sistemas web, automatizaciones y productos digitales",
+      title: "Thiago Zardo",
+      subtitle:
+        "Creo sistemas web y automatizaciones que ahorran tiempo y aumentan la productividad de pequenas empresas.",
+      primaryCta: "Solicitar presupuesto",
+      secondaryCta: "Ver proyectos",
+      metrics: [
+        ["4+ anos", "en desarrollo full stack"],
+        ["60 mil+", "organizaciones impactadas en producto SaaS"],
+        ["-90%", "tiempo en simulacion critica optimizada"],
+        ["99,9%", "continuidad operativa en plataforma critica"]
+      ]
+    },
+    about: {
+      eyebrow: "Sobre mi",
+      title: "Tecnologia con mentalidad de negocio, no solo codigo.",
+      body:
+        "Soy desarrollador full stack con experiencia en React, React Native, Node.js, TypeScript, NestJS, cloud y automatizacion. He trabajado en productos SaaS, plataformas de ciberseguridad, sistemas distribuidos y modernizacion de legados, siempre conectando ingenieria con resultados operativos.",
+      bullets: [
+        "Experiencia en productos usados por miles de usuarios y organizaciones.",
+        "Base solida en frontend, backend, mobile, APIs, DevOps y cloud.",
+        "Formacion full stack en Trybe y Desarrollo de Sistemas en Estacio.",
+        "Enfoque consultivo para entender procesos, cuellos de botella y retorno antes de implementar."
+      ]
+    },
+    servicesTitle: "Servicios para empresas que quieren operar mejor",
+    services: [
+      ["Landing pages de alta conversion", "Paginas rapidas, persuasivas y preparadas para convertir visitantes en contactos calificados.", Globe2],
+      ["Sistemas de agenda", "Flujos para clinicas, consultorios, talleres, gimnasios y servicios locales que reducen mensajes manuales.", CalendarCheck],
+      ["CRM simple", "Control de leads, clientes, etapas, historial y proximas acciones sin planillas dispersas.", Layers3],
+      ["Dashboards gerenciales", "Indicadores claros para acompanhar ventas, agenda, inventario, finanzas y operacion.", BarChart3],
+      ["Integraciones con APIs", "Conexion entre pagos, ERPs, CRMs, WhatsApp, herramientas internas y bases de datos.", GitBranch],
+      ["Automatizacion de WhatsApp", "Atencion inicial, notificaciones, recordatorios y recoleccion de datos con menos retrabajo.", MessageCircle],
+      ["Sistemas a medida", "Aplicaciones web para procesos especificos que una herramienta lista no resuelve bien.", Code2],
+      ["Aplicaciones web", "Experiencias responsivas, seguras y listas para crecer con el negocio.", Smartphone]
+    ],
+    process: {
+      title: "Proceso claro, previsible y enfocado en resultados",
+      steps: [
+        ["Diagnostico", "Mapeo el problema, publico, flujo actual y criterio de exito."],
+        ["Propuesta", "Defino alcance, entregables, prioridades, plazo e inversion."],
+        ["Diseno y arquitectura", "Organizo experiencia, datos, integraciones y caminos criticos."],
+        ["Desarrollo", "Construyo en ciclos cortos, con checkpoints y ajustes objetivos."],
+        ["Entrega y evolucion", "Publico, acompanho metricas, corrijo fricciones y planifico mejoras."]
+      ]
+    },
+    projectsTitle: "Proyectos destacados",
+    projects: [
+      {
+        name: "AutoFlex",
+        tag: "Proyecto real",
+        context: "Sistema web y API para gestion operativa de talleres mecanicos.",
+        problem: "Talleres pequenos dependen de mensajes dispersos, planillas y control manual de ordenes de servicio.",
+        solution: "Aplicacion full stack con flujo de clientes, vehiculos, servicios, estados e historial centralizado.",
+        results: "Reduce retrabajo administrativo y entrega una vision unica de la operacion.",
+        tech: ["TypeScript", "React", "Node.js", "API REST"],
+        github: "https://github.com/ThiagoZardo/autoflex-web",
+        demo: "https://github.com/ThiagoZardo/autoflex-api"
+      },
+      {
+        name: "RAG Lab",
+        tag: "Proyecto real",
+        context: "Laboratorio de IA para busqueda y respuestas basadas en documentos.",
+        problem: "Empresas pierden tiempo buscando informacion en PDFs, politicas internas y bases dispersas.",
+        solution: "Experimento TypeScript para estructurar consultas, contexto y respuestas asistidas por IA.",
+        results: "Base conceptual para asistentes internos, soporte y automatizacion del conocimiento.",
+        tech: ["TypeScript", "IA", "RAG", "Node.js"],
+        github: "https://github.com/ThiagoZardo/rag-lab",
+        demo: "https://github.com/ThiagoZardo/rag-lab"
+      },
+      {
+        name: "SolarMarket Platform",
+        tag: "Experiencia profesional",
+        context: "Plataforma SaaS para integradores y distribuidores solares.",
+        problem: "Procesos de venta, financiamiento, compras y simulacion necesitaban escala y estabilidad.",
+        solution: "Actuacion full stack y DevOps con React, Vue, Node.js, NestJS, microservicios, AWS, GCP y Kubernetes.",
+        results: "Deploys 2x mas frecuentes, costos de infraestructura 30% menores y simulacion critica mas de 90% mas rapida.",
+        tech: ["React", "Node.js", "NestJS", "AWS", "GCP", "Kubernetes"],
+        github: "https://github.com/ThiagoZardo/solar-market",
+        demo: "https://github.com/ThiagoZardo/solar-market"
+      },
+      {
+        name: "ClinicFlow",
+        tag: "Case conceptual",
+        context: "Sistema de agenda para clinicas y consultorios.",
+        problem: "Recepciones sobrecargadas con confirmaciones, remarcaciones y ausencias.",
+        solution: "Agenda online con notificaciones por WhatsApp, panel de pacientes e informes de asistencia.",
+        results: "Menos mensajes manuales, menor tasa de ausencias y atencion mas organizada.",
+        tech: ["Next.js", "TypeScript", "PostgreSQL", "WhatsApp API"],
+        github: "https://github.com/ThiagoZardo",
+        demo: "#contact"
+      }
+    ],
+    technologies: ["Next.js", "React", "React Native", "TypeScript", "Node.js", "NestJS", "Vue.js", "PHP", ".NET", "C#", "Python", "REST APIs", "GraphQL", "MySQL", "MongoDB", "AWS", "GCP", "Docker", "Kubernetes", "Terraform", "CI/CD", "Jest"],
+    testimonials: [
+      {
+        quote:
+          "Thiago es un desarrollador extremadamente dedicado y comprometido con la calidad de las entregas, con responsabilidad sobre metas y plazos.",
+        author: "Caique Rechi",
+        role: "Recomendacion en LinkedIn"
+      },
+      {
+        quote:
+          "Siempre dispuesto a ayudar y colaborar con el equipo, tuvo un papel fundamental en Desarrollo y DevOps.",
+        author: "Leonardo Henrique D.",
+        role: "Recomendacion en LinkedIn"
+      }
+    ],
+    faq: [
+      ["Trabajas en proyectos pequenos?", "Si. Landing pages, automatizaciones y MVPs son excelentes puntos de partida cuando existe un problema claro."],
+      ["Trabajas con contrato mensual?", "Si. Puedo trabajar por proyecto cerrado o de forma recurrente para mantenimiento, mejoras y evolucion."],
+      ["Puedo integrar WhatsApp, CRM o mi sistema actual?", "En la mayoria de los casos, si. Primero evaluo la API, permisos, volumen y reglas del proceso."],
+      ["El sitio sera rapido y optimizado para SEO?", "Si. La base usa Next.js, metadata tecnica, estructura semantica, responsividad y buenas practicas de performance."]
+    ],
+    cta: {
+      title: "Vamos a transformar un cuello de botella de tu negocio en un sistema simple de usar?",
+      body: "Cuentame que hoy consume tiempo, genera errores o queda disperso en planillas. Te ayudo a disenar una solucion objetiva.",
+      button: "Hablar por WhatsApp"
+    },
+    contact: {
+      title: "Solicita un presupuesto",
+      body: "Completa el formulario o escribeme directamente por WhatsApp. Cuanto mas contexto envies, mas precisa sera la propuesta.",
+      name: "Nombre",
+      email: "E-mail",
+      company: "Empresa",
+      message: "Cuentame sobre el proyecto",
+      submit: "Enviar por e-mail"
+    },
+    footer: "Desarrollado con Next.js, TypeScript, Tailwind CSS y foco en conversion."
   }
 } satisfies Record<Locale, unknown>;
 

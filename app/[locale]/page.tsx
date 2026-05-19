@@ -20,10 +20,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  const isPt = locale === "pt";
-  const title = isPt
-    ? "Thiago Zardo | Desenvolvedor Full Stack Freelancer"
-    : "Thiago Zardo | Freelance Full Stack Developer";
+  const metadataByLocale = {
+    pt: {
+      title: "Thiago Zardo | Desenvolvedor Full Stack Freelancer",
+      openGraphLocale: "pt_BR"
+    },
+    en: {
+      title: "Thiago Zardo | Freelance Full Stack Developer",
+      openGraphLocale: "en_US"
+    },
+    es: {
+      title: "Thiago Zardo | Desarrollador Full Stack Freelancer",
+      openGraphLocale: "es_ES"
+    }
+  } satisfies Record<Locale, { title: string; openGraphLocale: string }>;
+  const { title, openGraphLocale } = metadataByLocale[locale];
   const description = content[locale].hero.subtitle;
   const path = `/${locale}`;
 
@@ -34,13 +45,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: path,
       languages: {
         "pt-BR": "/pt",
-        "en-US": "/en"
+        "en-US": "/en",
+        "es-ES": "/es"
       }
     },
     openGraph: {
       type: "website",
       url: `${siteUrl}${path}`,
-      locale: isPt ? "pt_BR" : "en_US",
+      locale: openGraphLocale,
       siteName: profile.name,
       title,
       description,

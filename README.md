@@ -18,7 +18,7 @@ npm install
 npm run dev
 ```
 
-Acesse `http://localhost:3000/pt` ou `http://localhost:3000/en`.
+Acesse `http://localhost:3000/pt`, `http://localhost:3000/en` ou `http://localhost:3000/es`.
 
 ## Scripts
 
@@ -37,7 +37,7 @@ npm run typecheck
 - Schema.org JSON-LD
 - `sitemap.xml`
 - `robots.txt`
-- URLs bilíngues em `/pt` e `/en`
+- URLs multilíngues em `/pt`, `/en` e `/es`
 
 ## Deploy no GitHub Pages
 
