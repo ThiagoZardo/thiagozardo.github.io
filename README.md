@@ -79,7 +79,7 @@ O site posiciona Thiago Zardo como desenvolvedor full stack freelancer focado em
 
 - Conectar o formulário a Resend, Formspree ou API própria.
 - Adicionar cases reais com prints, métricas e depoimentos verificáveis.
-- Publicar demos dos projetos AutoFlex e RAG Lab.
+- Adicionar estudos de caso autorizados com prints, metricas e escopo real de entrega.
 - Criar páginas internas por serviço para SEO local.
 - Adicionar analytics de conversão e eventos de clique no WhatsApp.
 - Implementar blog com artigos para nichos como clínicas, imobiliárias e oficinas.
