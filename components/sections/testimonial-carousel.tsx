@@ -59,13 +59,6 @@ export function TestimonialCarousel({
                 ? "Como colegas describen mi trabajo"
                 : "How colleagues describe my work"}
           </h2>
-          <p className="mt-4 text-base leading-7 text-muted-foreground">
-            {locale === "pt"
-              ? "Trechos curtos das recomendacoes publicas, focados no que gera confianca: entrega, colaboracao e evolucao tecnica."
-              : locale === "es"
-                ? "Extractos breves de recomendaciones publicas, centrados en lo que genera confianza: entrega, colaboracion y evolucion tecnica."
-                : "Short excerpts from public recommendations, focused on what builds trust: delivery, collaboration and technical growth."}
-          </p>
         </div>
         <div className="flex items-center gap-2">
           <Button variant="secondary" size="icon" aria-label="Previous recommendation" onClick={previous}>
