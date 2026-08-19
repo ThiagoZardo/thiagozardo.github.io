@@ -1,465 +1,384 @@
-import {
-  BarChart3,
-  Bot,
-  CalendarCheck,
-  Code2,
-  Database,
-  GitBranch,
-  Globe2,
-  Layers3,
-  MessageCircle,
-  Rocket,
-  ShieldCheck,
-  Smartphone,
-  Workflow,
-  Wrench
-} from "lucide-react";
+export type Locale = "pt" | "en";
 
-export type Locale = "pt" | "en" | "es";
-
-export const locales: Locale[] = ["pt", "en", "es"];
+export const locales: Locale[] = ["pt", "en"];
 
 export const profile = {
   name: "Thiago Zardo",
-  role: {
-    pt: "Desenvolvedor Full Stack Freelancer",
-    en: "Freelance Full Stack Developer",
-    es: "Desarrollador Full Stack Freelancer"
-  },
   email: "tzardo.developer@gmail.com",
-  phone: "+55 13 98877-0538",
   linkedin: "https://www.linkedin.com/in/thiago-jarilho-zardo/",
-  location: {
-    pt: "Brasil, GMT-3",
-    en: "Brazil, GMT-3",
-    es: "Brasil, GMT-3"
-  }
+  github: "https://github.com/ThiagoZardo",
+  location: "Brazil · GMT−3"
 };
 
-export const content = {
+type CaseStudy = {
+  number: string;
+  title: string;
+  label: string;
+  problem: string;
+  ownership: string;
+  impact: string;
+  tags: string[];
+};
+
+type PortfolioContent = {
+  nav: { label: string; href: string }[];
+  hero: {
+    eyebrow: string;
+    role: string;
+    title: string;
+    summary: string;
+    primaryCta: string;
+    secondaryCta: string;
+    availability: string;
+    rangeLabel: string;
+    range: string[];
+    rangeNote: string;
+  };
+  summary: { eyebrow: string; title: string; body: string; principles: string[] };
+  experience: {
+    eyebrow: string;
+    title: string;
+    company: string;
+    scope: string;
+    body: string;
+    responsibilities: string[];
+    note: string;
+    journeyTitle: string;
+    journeyIntro: string;
+    companies: {
+      name: string;
+      scope: string;
+      context: string;
+      contribution: string;
+      technologies: string[];
+      website: string;
+    }[];
+  };
+  cases: { eyebrow: string; title: string; intro: string; labels: [string, string, string]; items: CaseStudy[] };
+  troubleshooting: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    chain: string[];
+    signals: string[];
+    phases: { title: string; description: string }[];
+    traceLabel: string;
+    note: string;
+  };
+  capabilities: {
+    eyebrow: string;
+    title: string;
+    groups: { title: string; items: string[]; description: string }[];
+  };
+  proof: { eyebrow: string; title: string; intro: string; quotes: { quote: string; author: string; role: string }[] };
+  contact: { eyebrow: string; title: string; body: string; email: string };
+  footer: string;
+};
+
+export const content: Record<Locale, PortfolioContent> = {
   pt: {
-    nav: ["Sobre", "Servicos", "Processo", "Experiencia", "FAQ", "Contato"],
+    nav: [
+      { label: "Experiência", href: "#experience" },
+      { label: "Cases", href: "#work" },
+      { label: "Stack", href: "#capabilities" },
+      { label: "Contato", href: "#contact" }
+    ],
     hero: {
-      eyebrow: "Sistemas web, automacoes e produtos digitais",
-      title: "Thiago Zardo",
-      subtitle:
-        "Crio sistemas web e automacoes que economizam tempo e aumentam a produtividade de pequenas empresas.",
-      primaryCta: "Solicitar orcamento",
-      secondaryCta: "Ver experiencia",
-      metrics: [
-        ["SaaS real", "experiencia em produtos usados por empresas"],
-        ["60 mil+", "organizacoes impactadas em plataforma global"],
-        ["-90%", "tempo em simulacao critica otimizada"],
-        ["30%", "reducao de custos de infraestrutura"]
-      ]
+      eyebrow: "Software Engineer · Brasil / Remoto",
+      role: "Full Stack · Backend · Cloud & DevOps",
+      title: "Engenharia de software, da aplicação à produção.",
+      summary:
+        "Desenvolvo produtos e resolvo problemas que atravessam backend, mobile, dados, integrações e infraestrutura — com responsabilidade até o sistema estar estável em produção.",
+      primaryCta: "Ver experiência",
+      secondaryCta: "Ver cases",
+      availability: "Aberto a posições remotas e internacionais",
+      rangeLabel: "Operating range",
+      range: ["Application", "API", "Business logic", "Data", "Integrations", "Infrastructure"],
+      rangeNote: "Cada camada importa quando a responsabilidade é ponta a ponta."
     },
-    about: {
-      eyebrow: "Sobre mim",
-      title: "Tecnologia com mentalidade de negocio, nao apenas codigo.",
+    summary: {
+      eyebrow: "Perfil",
+      title: "Entender o sistema inteiro é parte do meu trabalho.",
       body:
-        "Sou desenvolvedor full stack com experiencia em React, React Native, Node.js, TypeScript, NestJS, cloud e automacao. Atuei em produtos SaaS, plataformas de ciberseguranca, sistemas distribuidos e modernizacao de legados, sempre conectando engenharia a resultado operacional.",
-      bullets: [
-        "Experiencia em produtos usados por milhares de usuarios e organizacoes.",
-        "Background forte em frontend, backend, mobile, APIs, DevOps e cloud.",
-        "Vivencia com SaaS, ciberseguranca, automacao, mobile, APIs, cloud e sistemas legados.",
-        "Postura consultiva para entender processo, prioridade e retorno antes de implementar."
+        "Não trato código, ambiente e operação como mundos separados. Navego por configuração, integrações, dados e infraestrutura para entregar mudanças com segurança e resolver falhas que não respeitam fronteiras de função.",
+      principles: [
+        "Ownership da investigação à produção",
+        "Automação de processos repetitivos",
+        "Qualidade integrada ao fluxo de entrega"
       ]
     },
-    servicesTitle: "Servicos para empresas que querem operar melhor",
-    services: [
-      ["Landing pages de alta conversao", "Paginas rapidas, persuasivas e preparadas para transformar visitantes em contatos qualificados.", Globe2],
-      ["Sistemas de agendamento", "Fluxos para clinicas, consultorios, oficinas, academias e servicos locais reduzirem mensagens manuais.", CalendarCheck],
-      ["CRM simples", "Controle de leads, clientes, etapas, historico e proximas acoes sem planilhas espalhadas.", Layers3],
-      ["Dashboards gerenciais", "Indicadores claros para acompanhar vendas, agenda, estoque, financeiro e operacao.", BarChart3],
-      ["Integracoes com APIs", "Conexao entre pagamentos, ERPs, CRMs, WhatsApp, ferramentas internas e bancos de dados.", GitBranch],
-      ["Automacao de WhatsApp", "Atendimento inicial, notificacoes, lembretes e coleta de dados com menos retrabalho.", MessageCircle],
-      ["Sistemas sob medida", "Aplicativos web para processos especificos que uma ferramenta pronta nao resolve bem.", Code2],
-      ["Aplicativos web", "Experiencias responsivas, seguras e prontas para crescer com o negocio.", Smartphone]
-    ],
-    process: {
-      title: "Processo claro, previsivel e focado em resultado",
-      steps: [
-        ["Diagnostico", "Mapeio o problema, publico, fluxo atual e criterio de sucesso."],
-        ["Proposta", "Defino escopo, entregaveis, prioridades, prazo e investimento."],
-        ["Design e arquitetura", "Organizo a experiencia, dados, integracoes e caminhos criticos."],
-        ["Desenvolvimento", "Construo em ciclos curtos, com checkpoints e ajustes objetivos."],
-        ["Entrega e evolucao", "Publico, acompanho metricas, corrijo atritos e planejo melhorias."]
+    experience: {
+      eyebrow: "Perfil profissional",
+      title: "Hoje, atuo onde software encontra operação.",
+      company: "Unex",
+      scope: "Software · Infrastructure · Production",
+      body:
+        "Hoje, minha atuação está especialmente próxima de backend, aplicações web e mobile, integrações financeiras, ambientes, deployments e operação. Sou frequentemente envolvido quando um problema exige conectar sinais de diferentes camadas e conduzir a solução até produção.",
+      responsibilities: [
+        "Criação do ambiente Sandbox e separação do fluxo de validação da produção.",
+        "Estruturação e evolução da automação de deployment entre ambientes.",
+        "Troubleshooting em aplicações, APIs, bancos, integrações e infraestrutura.",
+        "Incentivo e implementação de testes como parte da evolução do processo de qualidade.",
+        "Identificação e correção de problemas de segurança sem expor detalhes sensíveis.",
+        "Suporte técnico e compartilhamento de contexto em problemas complexos."
+      ],
+      note: "Responsabilidade técnica real, sem transformar colaboração informal em um cargo de liderança.",
+      journeyTitle: "Uma trajetória entre produto, plataforma e operação.",
+      journeyIntro: "Quatro contextos diferentes, com o mesmo fio condutor: assumir problemas reais, navegar entre camadas e conectar decisões de produto à operação.",
+      companies: [
+        {
+          name: "Unex",
+          scope: "Software · Infrastructure · Production",
+          context: "Operação com aplicações web e mobile, backend, integrações financeiras, ambientes e serviços em produção.",
+          contribution: "Criação de Sandbox, evolução da esteira de deployment, troubleshooting ponta a ponta, testes, segurança e automações com agentes de IA.",
+          technologies: ["Node.js", "TypeScript", "React", "React Native", "AWS", "CI/CD", "MySQL"],
+          website: "https://unex.ar/"
+        },
+        {
+          name: "Mosyle",
+          scope: "Full Stack · Cybersecurity · Apple Device Management",
+          context: "Plataforma cloud-native de gerenciamento e segurança de dispositivos Apple, utilizada por organizações em escala global.",
+          contribution: "Atuação full stack em funcionalidades, integrações e modernização de base legada, trabalhando com confiabilidade, segurança e continuidade operacional.",
+          technologies: ["React Native", "Node.js", "PHP", ".NET", "C#", "AWS", "Microservices"],
+          website: "https://mosyle.com/"
+        },
+        {
+          name: "SolarMarket",
+          scope: "Full Stack · DevOps · Energy SaaS",
+          context: "SaaS para integradores e distribuidores solares, cobrindo vendas, financiamento, compras e simulações.",
+          contribution: "Atuação entre produto e infraestrutura, evoluindo aplicações, deploys, custos operacionais e performance de fluxos críticos.",
+          technologies: ["TypeScript", "Node.js", "NestJS", "React", "Vue", "AWS", "GCP", "Kubernetes"],
+          website: "https://www.solarmarket.com.br/"
+        },
+        {
+          name: "Control 361",
+          scope: "Full Stack · Web · Mobile",
+          context: "Empresa de tecnologia e serviços digitais com projetos em diferentes stacks, aplicações mobile e integrações.",
+          contribution: "Desenvolvimento full stack conectando experiência do usuário, regras de negócio, backend e mobile em ambientes de produto e serviços.",
+          technologies: ["React Native", "Node.js", "PHP", ".NET", "C#"],
+          website: "https://control361.com.br/"
+        }
       ]
     },
-    projectsTitle: "Experiencia em produtos e empresas reais",
-    projects: [
-      {
-        name: "Mosyle",
-        tag: "Ciberseguranca e Apple Device Management",
-        context: "Plataforma cloud-native para gerenciamento e seguranca de dispositivos Apple.",
-        problem: "Produtos globais precisam evoluir funcionalidades criticas sem comprometer estabilidade, seguranca e continuidade operacional.",
-        solution: "Atuacao full stack em funcionalidades, integracoes e modernizacao de base legada com foco em confiabilidade.",
-        results: "Contribuicao em plataforma usada por mais de 60 mil organizacoes em mais de 100 paises.",
-        tech: ["React Native", "Node.js", "PHP", ".NET", "C#", "AWS", "Microservices"],
-        website: "https://mosyle.com/"
-      },
-      {
-        name: "SolarMarket",
-        tag: "SaaS e automacao para energia solar",
-        context: "Plataforma para integradores e distribuidores solares com processos de venda, financiamento, compras e simulacao.",
-        problem: "A operacao precisava escalar deploys, reduzir custos e melhorar performance de fluxos criticos.",
-        solution: "Atuacao full stack e DevOps com React, Vue, Node.js, NestJS, AWS, GCP, Docker, Kubernetes e Terraform.",
-        results: "Deploys 2x mais frequentes, custos de infraestrutura 30% menores e simulacao critica mais de 90% mais rapida.",
-        tech: ["TypeScript", "Node.js", "NestJS", "React", "Vue", "AWS", "GCP", "Kubernetes"],
-        website: "https://www.solarmarket.com.br/"
-      },
-      {
-        name: "Control 361",
-        tag: "Desenvolvimento full stack",
-        context: "Empresa de tecnologia e servicos digitais com demandas web, mobile e integracoes.",
-        problem: "Projetos com diferentes stacks exigiam velocidade de entrega e capacidade de atuar entre frontend, backend e mobile.",
-        solution: "Desenvolvimento full stack com React Native, Node.js, PHP, .NET e C#.",
-        results: "Entrega de funcionalidades em ambiente de produto e servicos, conectando experiencia do usuario e regras de negocio.",
-        tech: ["React Native", "Node.js", "PHP", ".NET", "C#"],
-        website: "https://control361.com.br/"
-      },
-      {
-        name: "UNEX",
-        tag: "Experiencia internacional",
-        context: "Empresa com presenca digital na Argentina e demandas de tecnologia para negocios.",
-        problem: "Ambientes digitais exigem comunicacao clara, confiabilidade e evolucao continua.",
-        solution: "Experiencia aplicada em desenvolvimento e suporte a solucoes digitais com foco em usabilidade e manutencao.",
-        results: "Vivencia em contexto internacional, colaborando com produtos e processos voltados a operacao real.",
-        tech: ["Web", "Sistemas", "Processos", "Integracoes"],
-        website: "https://unex.ar/"
-      }
-    ],
-    technologies: ["Next.js", "React", "React Native", "TypeScript", "Node.js", "NestJS", "Vue.js", "PHP", ".NET", "C#", "Python", "REST APIs", "GraphQL", "MySQL", "MongoDB", "AWS", "GCP", "Docker", "Kubernetes", "Terraform", "CI/CD", "Jest"],
-    testimonials: [
-      {
-        quote:
-          "Desenvolvedor dedicado, comprometido com a qualidade das entregas e com grande responsabilidade sobre metas e prazos.",
-        author: "Caique Rechi",
-        role: "Backend Developer PHP Pleno"
-      },
-      {
-        quote:
-          "Profissional excepcional, sempre disposto a ajudar e peça-chave nas áreas de Desenvolvimento e DevOps.",
-        author: "Leonardo Henrique Da Silva Paixao",
-        role: "QA Engineer Pleno"
-      },
-      {
-        quote:
-          "Profissional versátil, com progresso notável e capacidade de atuar em back end, front end e desenvolvimento mobile.",
-        author: "Jonathan Cardoso",
-        role: "Full Stack Software Engineer"
-      },
-      {
-        quote:
-          "Fundamental para o projeto, guiando dúvidas do grupo, apoiando a equipe e demonstrando forte habilidade em JavaScript e React.",
-        author: "Arthur Barros",
-        role: "Full-Stack Developer"
-      }
-    ],
-    faq: [
-      ["Voce atende projetos pequenos?", "Sim. Landing pages, automacoes e MVPs sao otimos pontos de partida quando existe um problema claro."],
-      ["Voce trabalha com contrato mensal?", "Sim. Posso atuar por projeto fechado ou recorrencia para manutencao, melhorias e evolucao."],
-      ["Consigo integrar WhatsApp, CRM ou sistema atual?", "Na maioria dos casos, sim. Primeiro avalio a API, permisssoes, volume e regras do processo."],
-      ["O site sera rapido e otimizado para SEO?", "Sim. A base usa Next.js, metadata tecnica, estrutura semantica, responsividade e boas praticas de performance."]
-    ],
-    cta: {
-      title: "Vamos simplificar um processo que hoje toma tempo da sua equipe?",
-      body: "Conte onde a operacao trava, quais tarefas ainda sao manuais e que resultado voce espera melhorar. Eu ajudo a desenhar uma solucao objetiva.",
-      button: "Falar pelo WhatsApp"
+    cases: {
+      eyebrow: "Selected engineering work",
+      title: "Problemas de engenharia que assumi até o fim.",
+      intro:
+        "Uma seleção de mudanças em ambientes, entrega, diagnóstico e automação — descritas pelo problema, pela responsabilidade assumida e pelo resultado de engenharia.",
+      labels: ["Problema", "Minha atuação", "Impacto"],
+      items: [
+        {
+          number: "01",
+          title: "Sandbox Environment",
+          label: "Ambientes & qualidade",
+          problem: "Parte das mudanças ainda era validada diretamente em produção, aumentando o risco e limitando um fluxo adequado de desenvolvimento e testes.",
+          ownership: "Criei o Sandbox do zero: infraestrutura, aplicações, serviços, configuração e separação de ambientes. Também orientei o time sobre o novo fluxo e incentivei validação e testes antes da produção.",
+          impact: "O time passou a contar com um ambiente dedicado para desenvolver e validar mudanças com isolamento da produção.",
+          tags: ["AWS", "Environments", "Testing", "Process"]
+        },
+        {
+          number: "02",
+          title: "Deployment Pipeline",
+          label: "Entrega & operação",
+          problem: "O processo de entrega dependia de etapas manuais e precisava funcionar de forma consistente entre Sandbox, Staging e Production.",
+          ownership: "Estruturei e evoluí a esteira de deployment, conectando versionamento, configuração de ambiente, serviços, aplicações e infraestrutura em um fluxo mais previsível.",
+          impact: "Redução da dependência de passos manuais e maior padronização da entrega entre ambientes.",
+          tags: ["CI/CD", "Git", "AWS EC2", "PM2"]
+        },
+        {
+          number: "03",
+          title: "Production Troubleshooting",
+          label: "Investigação ponta a ponta",
+          problem: "Falhas de produção raramente pertencem a uma única camada e podem atravessar mobile, API, regras de negócio, banco, integrações e infraestrutura.",
+          ownership: "Investigo logs, erros de API, processos, configuração, dados, integrações externas e deploy até isolar a causa e conduzir a correção.",
+          impact: "Problemas complexos são tratados com visão sistêmica, contexto compartilhado e responsabilidade até a estabilização.",
+          tags: ["Logs", "APIs", "Databases", "Infrastructure"]
+        },
+        {
+          number: "04",
+          title: "Engineering Automation",
+          label: "AI-assisted engineering",
+          problem: "Verificações e tarefas repetitivas consomem tempo que poderia ser aplicado a decisões de engenharia.",
+          ownership: "Integro agentes e Claude Code ao workflow para analisar tarefas, automatizar verificações e executar partes repetíveis do desenvolvimento com supervisão técnica.",
+          impact: "Menos trabalho mecânico e um fluxo técnico mais rápido para o time, mantendo contexto e responsabilidade humana.",
+          tags: ["Claude Code", "AI Agents", "Automation", "Workflow"]
+        }
+      ]
+    },
+    troubleshooting: {
+      eyebrow: "Como investigo",
+      title: "Do sintoma à causa raiz.",
+      body:
+        "Quando a falha não cabe em uma camada, sigo o rastro técnico até encontrar a origem — e percorro o fluxo novamente para validar a correção.",
+      chain: ["Mobile", "API", "Business logic", "Database", "External integration", "Infrastructure"],
+      signals: ["Sintoma observado", "Contexto da requisição", "Regra executada", "Estado dos dados", "Resposta da dependência", "Ambiente em execução"],
+      phases: [
+        { title: "Observar", description: "Reúno logs, erros, contexto e o comportamento esperado." },
+        { title: "Isolar", description: "Reduzo hipóteses atravessando cada camada do fluxo." },
+        { title: "Validar", description: "Confirmo a causa e percorro o caminho novamente após a correção." }
+      ],
+      traceLabel: "Rastro de investigação",
+      note: "Logs · configuração · ambiente · deploy · observabilidade"
+    },
+    capabilities: {
+      eyebrow: "Technical scope",
+      title: "A stack muda. A responsabilidade continua.",
+      groups: [
+        { title: "Backend", items: ["Node.js", "TypeScript", "NestJS", "Prisma", "REST APIs"], description: "APIs, regras de negócio e integrações." },
+        { title: "Web & Mobile", items: ["React", "Next.js", "Vue.js", "React Native", "Expo"], description: "Produtos web e experiências mobile." },
+        { title: "Cloud & DevOps", items: ["AWS", "EC2", "RDS", "SSM", "Docker", "PM2", "CI/CD"], description: "Ambientes, automação e operação." },
+        { title: "Engineering", items: ["MySQL", "MariaDB", "Testing", "Security", "Troubleshooting", "AI Agents"], description: "Qualidade, diagnóstico e evolução de processo." }
+      ]
+    },
+    proof: {
+      eyebrow: "Colaboração técnica",
+      title: "Confiança construída no trabalho real.",
+      intro: "Recomendações de pessoas que acompanharam minha atuação entre desenvolvimento, DevOps e produto.",
+      quotes: [
+        { quote: "Desenvolvedor dedicado, comprometido com a qualidade das entregas e com grande responsabilidade sobre metas e prazos.", author: "Caique Rechi", role: "Backend Developer PHP Pleno" },
+        { quote: "Profissional excepcional, sempre disposto a ajudar e peça-chave nas áreas de Desenvolvimento e DevOps.", author: "Leonardo Henrique Da Silva Paixão", role: "QA Engineer Pleno" },
+        { quote: "Profissional versátil, com progresso notável e capacidade de atuar em back end, front end e desenvolvimento mobile.", author: "Jonathan Cardoso", role: "Full Stack Software Engineer" },
+        { quote: "Fundamental para o projeto, guiando dúvidas do grupo, apoiando a equipe e demonstrando forte habilidade em JavaScript e React.", author: "Arthur Barros", role: "Full Stack Developer" }
+      ]
     },
     contact: {
-      title: "Solicite um orcamento",
-      body: "Preencha o formulario ou chame direto no WhatsApp. Quanto mais contexto voce enviar, mais precisa fica a proposta.",
-      name: "Nome",
-      email: "E-mail",
-      company: "Empresa",
-      message: "Conte sobre o projeto",
-      submit: "Enviar por e-mail"
+      eyebrow: "Contato",
+      title: "Se o desafio atravessa software e produção, vamos conversar.",
+      body: "Estou aberto a oportunidades remotas e internacionais, além de projetos em que desenvolvimento, infraestrutura e operação precisam avançar juntos.",
+      email: "Enviar e-mail"
     },
-    footer: "Desenvolvido com Next.js, TypeScript, Tailwind CSS e foco em conversao."
+    footer: "Software engineering across application, infrastructure and production."
   },
   en: {
-    nav: ["About", "Services", "Process", "Experience", "FAQ", "Contact"],
+    nav: [
+      { label: "Experience", href: "#experience" },
+      { label: "Work", href: "#work" },
+      { label: "Stack", href: "#capabilities" },
+      { label: "Contact", href: "#contact" }
+    ],
     hero: {
-      eyebrow: "Web systems, automation and digital products",
-      title: "Thiago Zardo",
-      subtitle:
-        "I build web systems and automations that save time and increase productivity for small businesses.",
-      primaryCta: "Request a quote",
-      secondaryCta: "View experience",
-      metrics: [
-        ["Real SaaS", "experience in products used by companies"],
-        ["60k+", "organizations impacted in a global platform"],
-        ["-90%", "runtime in optimized critical simulation"],
-        ["30%", "reduction in infrastructure costs"]
+      eyebrow: "Software Engineer · Brazil / Remote",
+      role: "Full Stack · Backend · Cloud & DevOps",
+      title: "Software engineering, from application to production.",
+      summary: "I build products and solve problems across backend, mobile, data, integrations and infrastructure—owning the outcome until the system is stable in production.",
+      primaryCta: "View experience",
+      secondaryCta: "Selected work",
+      availability: "Open to remote and international roles",
+      rangeLabel: "Operating range",
+      range: ["Application", "API", "Business logic", "Data", "Integrations", "Infrastructure"],
+      rangeNote: "Every layer matters when ownership is end to end."
+    },
+    summary: {
+      eyebrow: "Profile",
+      title: "Understanding the whole system is part of my job.",
+      body: "I do not treat code, environments and operations as separate worlds. I move through configuration, integrations, data and infrastructure to ship safer changes and solve failures that do not respect role boundaries.",
+      principles: ["Ownership from investigation to production", "Automation of repetitive processes", "Quality built into the delivery flow"]
+    },
+    experience: {
+      eyebrow: "Professional profile",
+      title: "Today, I work where software meets operations.",
+      company: "Unex",
+      scope: "Software · Infrastructure · Production",
+      body: "Today, my work is especially close to backend, web and mobile applications, financial integrations, environments, deployments and operations. I am often involved when a problem requires connecting signals across layers and driving the solution through production.",
+      responsibilities: [
+        "Built a Sandbox environment and separated validation from production.",
+        "Structured and evolved deployment automation across environments.",
+        "Troubleshot applications, APIs, databases, integrations and infrastructure.",
+        "Promoted and implemented testing as the engineering quality process evolved.",
+        "Identified and fixed security issues without exposing sensitive details.",
+        "Supported engineers and shared context while resolving complex problems."
+      ],
+      note: "Real technical responsibility, without turning informal collaboration into a leadership title.",
+      journeyTitle: "A career across product, platform and operations.",
+      journeyIntro: "Four different contexts with the same throughline: owning real problems, moving across layers and connecting product decisions to operations.",
+      companies: [
+        {
+          name: "Unex",
+          scope: "Software · Infrastructure · Production",
+          context: "An operation spanning web and mobile applications, backend, financial integrations, environments and production services.",
+          contribution: "Built a Sandbox environment, evolved the deployment pipeline, handled end-to-end troubleshooting, and advanced testing, security and AI-agent automation.",
+          technologies: ["Node.js", "TypeScript", "React", "React Native", "AWS", "CI/CD", "MySQL"],
+          website: "https://unex.ar/"
+        },
+        {
+          name: "Mosyle",
+          scope: "Full Stack · Cybersecurity · Apple Device Management",
+          context: "A cloud-native Apple device management and security platform used by organizations at global scale.",
+          contribution: "Full stack work across features, integrations and legacy modernization, with a focus on reliability, security and operational continuity.",
+          technologies: ["React Native", "Node.js", "PHP", ".NET", "C#", "AWS", "Microservices"],
+          website: "https://mosyle.com/"
+        },
+        {
+          name: "SolarMarket",
+          scope: "Full Stack · DevOps · Energy SaaS",
+          context: "A SaaS platform for solar integrators and distributors, covering sales, financing, purchasing and simulation workflows.",
+          contribution: "Worked across product and infrastructure, evolving applications, deployments, operational costs and the performance of critical flows.",
+          technologies: ["TypeScript", "Node.js", "NestJS", "React", "Vue", "AWS", "GCP", "Kubernetes"],
+          website: "https://www.solarmarket.com.br/"
+        },
+        {
+          name: "Control 361",
+          scope: "Full Stack · Web · Mobile",
+          context: "A technology and digital services company with projects across different stacks, mobile applications and integrations.",
+          contribution: "Full stack development connecting user experience, business rules, backend and mobile across product and services environments.",
+          technologies: ["React Native", "Node.js", "PHP", ".NET", "C#"],
+          website: "https://control361.com.br/"
+        }
       ]
     },
-    about: {
-      eyebrow: "About me",
-      title: "Business-minded technology, not just code.",
-      body:
-        "I am a full stack developer experienced with React, React Native, Node.js, TypeScript, NestJS, cloud and automation. I have worked on SaaS products, cybersecurity platforms, distributed systems and legacy modernization, always connecting engineering decisions to operational results.",
-      bullets: [
-        "Experience with products used by thousands of users and organizations.",
-        "Strong background across frontend, backend, mobile, APIs, DevOps and cloud.",
-        "Hands-on experience with SaaS, cybersecurity, automation, mobile, APIs, cloud and legacy systems.",
-        "Consultative approach to understand workflow, priority and ROI before implementation."
+    cases: {
+      eyebrow: "Selected engineering work",
+      title: "Engineering problems I owned end to end.",
+      intro: "A selection of changes across environments, delivery, diagnosis and automation—framed by the problem, the responsibility I owned and the engineering outcome.",
+      labels: ["Problem", "What I owned", "Outcome"],
+      items: [
+        { number: "01", title: "Sandbox Environment", label: "Environments & quality", problem: "Some changes were still validated directly in production, increasing delivery risk and limiting a proper development and testing flow.", ownership: "I built the Sandbox from scratch: infrastructure, applications, services, configuration and environment separation. I also guided the team through the new flow and promoted validation and testing before production.", impact: "The team gained a dedicated environment to develop and validate changes in isolation from production.", tags: ["AWS", "Environments", "Testing", "Process"] },
+        { number: "02", title: "Deployment Pipeline", label: "Delivery & operations", problem: "The delivery process depended on manual steps and needed to work consistently across Sandbox, Staging and Production.", ownership: "I structured and evolved the deployment pipeline, connecting version control, environment configuration, services, applications and infrastructure into a more predictable flow.", impact: "Reduced dependence on manual steps and brought greater consistency to delivery across environments.", tags: ["CI/CD", "Git", "AWS EC2", "PM2"] },
+        { number: "03", title: "Production Troubleshooting", label: "End-to-end investigation", problem: "Production failures rarely belong to a single layer; they may cross mobile, APIs, business logic, databases, integrations and infrastructure.", ownership: "I investigate logs, API errors, processes, configuration, data, external integrations and deployments until I isolate the cause and drive the fix.", impact: "Complex problems are handled with a system-wide view, shared context and ownership through stabilization.", tags: ["Logs", "APIs", "Databases", "Infrastructure"] },
+        { number: "04", title: "Engineering Automation", label: "AI-assisted engineering", problem: "Repetitive tasks and checks consume time that could be spent on engineering decisions.", ownership: "I integrate agents and Claude Code into the workflow to analyze tasks, automate checks and execute repeatable parts of development under technical supervision.", impact: "Less mechanical work and a faster technical workflow for the team, while preserving human context and accountability.", tags: ["Claude Code", "AI Agents", "Automation", "Workflow"] }
       ]
     },
-    servicesTitle: "Services for companies that want to operate better",
-    services: [
-      ["High-conversion landing pages", "Fast, persuasive pages built to turn visitors into qualified leads.", Globe2],
-      ["Scheduling systems", "Flows for clinics, offices, repair shops, gyms and local services to reduce manual messaging.", CalendarCheck],
-      ["Simple CRM", "Lead, client, stage, history and next-action management without scattered spreadsheets.", Layers3],
-      ["Management dashboards", "Clear metrics to track sales, appointments, inventory, finance and operations.", BarChart3],
-      ["API integrations", "Connections between payments, ERPs, CRMs, WhatsApp, internal tools and databases.", GitBranch],
-      ["WhatsApp automation", "Initial support, notifications, reminders and data collection with less rework.", MessageCircle],
-      ["Custom systems", "Web applications for specific processes that off-the-shelf tools do not solve well.", Code2],
-      ["Web applications", "Responsive, secure experiences ready to grow with the business.", Smartphone]
-    ],
-    process: {
-      title: "A clear, predictable and outcome-focused process",
-      steps: [
-        ["Discovery", "I map the problem, audience, current workflow and success criteria."],
-        ["Proposal", "I define scope, deliverables, priorities, timeline and investment."],
-        ["Design and architecture", "I organize UX, data, integrations and critical paths."],
-        ["Development", "I build in short cycles with checkpoints and objective adjustments."],
-        ["Launch and evolution", "I publish, monitor metrics, fix friction and plan improvements."]
+    troubleshooting: {
+      eyebrow: "How I investigate",
+      title: "From symptom to root cause.",
+      body: "When a failure does not fit within one layer, I follow the technical trace until I find the source—and move through the flow again to validate the fix.",
+      chain: ["Mobile", "API", "Business logic", "Database", "External integration", "Infrastructure"],
+      signals: ["Observed symptom", "Request context", "Executed rule", "Data state", "Dependency response", "Runtime environment"],
+      phases: [
+        { title: "Observe", description: "Collect logs, errors, context and the expected behavior." },
+        { title: "Isolate", description: "Narrow the hypotheses while moving through each layer." },
+        { title: "Validate", description: "Confirm the cause and retrace the path after the fix." }
+      ],
+      traceLabel: "Investigation trace",
+      note: "Logs · configuration · environment · deployment · observability"
+    },
+    capabilities: {
+      eyebrow: "Technical scope",
+      title: "The stack changes. Ownership stays.",
+      groups: [
+        { title: "Backend", items: ["Node.js", "TypeScript", "NestJS", "Prisma", "REST APIs"], description: "APIs, business logic and integrations." },
+        { title: "Web & Mobile", items: ["React", "Next.js", "Vue.js", "React Native", "Expo"], description: "Web products and mobile experiences." },
+        { title: "Cloud & DevOps", items: ["AWS", "EC2", "RDS", "SSM", "Docker", "PM2", "CI/CD"], description: "Environments, automation and operations." },
+        { title: "Engineering", items: ["MySQL", "MariaDB", "Testing", "Security", "Troubleshooting", "AI Agents"], description: "Quality, diagnosis and process evolution." }
       ]
     },
-    projectsTitle: "Experience in real products and companies",
-    projects: [
-      {
-        name: "Mosyle",
-        tag: "Cybersecurity and Apple Device Management",
-        context: "Cloud-native platform for Apple device management and security.",
-        problem: "Global products need to evolve critical features without compromising stability, security and operational continuity.",
-        solution: "Full stack work on features, integrations and legacy modernization with a reliability focus.",
-        results: "Contribution to a platform used by more than 60,000 organizations in over 100 countries.",
-        tech: ["React Native", "Node.js", "PHP", ".NET", "C#", "AWS", "Microservices"],
-        website: "https://mosyle.com/"
-      },
-      {
-        name: "SolarMarket",
-        tag: "SaaS and automation for solar energy",
-        context: "Platform for solar integrators and distributors across sales, financing, purchasing and simulation workflows.",
-        problem: "The operation needed to scale deployments, reduce costs and improve performance in critical flows.",
-        solution: "Full stack and DevOps work with React, Vue, Node.js, NestJS, AWS, GCP, Docker, Kubernetes and Terraform.",
-        results: "2x deployment frequency, 30% lower infrastructure costs and a critical simulation over 90% faster.",
-        tech: ["TypeScript", "Node.js", "NestJS", "React", "Vue", "AWS", "GCP", "Kubernetes"],
-        website: "https://www.solarmarket.com.br/"
-      },
-      {
-        name: "Control 361",
-        tag: "Full stack development",
-        context: "Technology and digital services company with web, mobile and integration demands.",
-        problem: "Projects across different stacks required delivery speed and the ability to work across frontend, backend and mobile.",
-        solution: "Full stack development with React Native, Node.js, PHP, .NET and C#.",
-        results: "Feature delivery in product and services environments, connecting user experience and business rules.",
-        tech: ["React Native", "Node.js", "PHP", ".NET", "C#"],
-        website: "https://control361.com.br/"
-      },
-      {
-        name: "UNEX",
-        tag: "International experience",
-        context: "Company with digital presence in Argentina and technology demands for business operations.",
-        problem: "Digital environments require clear communication, reliability and continuous evolution.",
-        solution: "Applied experience in development and support for digital solutions focused on usability and maintenance.",
-        results: "Experience in an international context, collaborating with products and processes tied to real operations.",
-        tech: ["Web", "Systems", "Processes", "Integrations"],
-        website: "https://unex.ar/"
-      }
-    ],
-    technologies: ["Next.js", "React", "React Native", "TypeScript", "Node.js", "NestJS", "Vue.js", "PHP", ".NET", "C#", "Python", "REST APIs", "GraphQL", "MySQL", "MongoDB", "AWS", "GCP", "Docker", "Kubernetes", "Terraform", "CI/CD", "Jest"],
-    testimonials: [
-      {
-        quote:
-          "Dedicated developer, committed to delivery quality and highly responsible with goals and deadlines.",
-        author: "Caique Rechi",
-        role: "Backend Developer PHP Pleno"
-      },
-      {
-        quote:
-          "Exceptional professional, always willing to help and a key contributor across Development and DevOps.",
-        author: "Leonardo Henrique Da Silva Paixao",
-        role: "QA Engineer Pleno"
-      },
-      {
-        quote:
-          "Versatile professional with remarkable progress and confidence across back end, front end and mobile development.",
-        author: "Jonathan Cardoso",
-        role: "Full Stack Software Engineer"
-      },
-      {
-        quote:
-          "Fundamental to the project, guiding the team, answering questions and showing strong JavaScript and React skills.",
-        author: "Arthur Barros",
-        role: "Full-Stack Developer"
-      }
-    ],
-    faq: [
-      ["Do you work on small projects?", "Yes. Landing pages, automations and MVPs are excellent starting points when there is a clear problem."],
-      ["Can you work on a monthly retainer?", "Yes. I can work on fixed-scope projects or ongoing maintenance, improvements and evolution."],
-      ["Can you integrate WhatsApp, CRMs or existing systems?", "In most cases, yes. I first assess the API, permissions, volume and business rules."],
-      ["Will the site be fast and SEO optimized?", "Yes. The foundation uses Next.js, technical metadata, semantic structure, responsiveness and performance best practices."]
-    ],
-    cta: {
-      title: "Let's simplify a process that currently takes time from your team.",
-      body: "Tell me where the operation slows down, which tasks are still manual and what result you want to improve. I will help shape an objective solution.",
-      button: "Message on WhatsApp"
+    proof: {
+      eyebrow: "Technical collaboration",
+      title: "Trust built through real work.",
+      intro: "Recommendations from people who worked with me across development, DevOps and product.",
+      quotes: [
+        { quote: "A dedicated developer, committed to delivery quality and highly responsible with goals and deadlines.", author: "Caique Rechi", role: "Backend Developer" },
+        { quote: "An exceptional professional, always willing to help and a key contributor across Development and DevOps.", author: "Leonardo Henrique Da Silva Paixão", role: "QA Engineer" },
+        { quote: "A versatile professional, with remarkable growth and the ability to work across back end, front end and mobile development.", author: "Jonathan Cardoso", role: "Full Stack Software Engineer" },
+        { quote: "Fundamental to the project, guiding the team, answering questions and demonstrating strong JavaScript and React skills.", author: "Arthur Barros", role: "Full Stack Developer" }
+      ]
     },
     contact: {
-      title: "Request a quote",
-      body: "Fill out the form or message me directly on WhatsApp. The more context you send, the more precise the proposal will be.",
-      name: "Name",
-      email: "Email",
-      company: "Company",
-      message: "Tell me about the project",
-      submit: "Send by email"
+      eyebrow: "Contact",
+      title: "If the challenge spans software and production, let’s talk.",
+      body: "I am open to remote and international roles, as well as projects where software, infrastructure and operations need to move forward together.",
+      email: "Send an email"
     },
-    footer: "Built with Next.js, TypeScript, Tailwind CSS and conversion-first thinking."
-  },
-  es: {
-    nav: ["Sobre mi", "Servicios", "Proceso", "Experiencia", "FAQ", "Contacto"],
-    hero: {
-      eyebrow: "Sistemas web, automatizaciones y productos digitales",
-      title: "Thiago Zardo",
-      subtitle:
-        "Creo sistemas web y automatizaciones que ahorran tiempo y aumentan la productividad de pequenas empresas.",
-      primaryCta: "Solicitar presupuesto",
-      secondaryCta: "Ver experiencia",
-      metrics: [
-        ["SaaS real", "experiencia en productos usados por empresas"],
-        ["60 mil+", "organizaciones impactadas en plataforma global"],
-        ["-90%", "tiempo en simulacion critica optimizada"],
-        ["30%", "reduccion de costos de infraestructura"]
-      ]
-    },
-    about: {
-      eyebrow: "Sobre mi",
-      title: "Tecnologia con mentalidad de negocio, no solo codigo.",
-      body:
-        "Soy desarrollador full stack con experiencia en React, React Native, Node.js, TypeScript, NestJS, cloud y automatizacion. He trabajado en productos SaaS, plataformas de ciberseguridad, sistemas distribuidos y modernizacion de legados, siempre conectando ingenieria con resultados operativos.",
-      bullets: [
-        "Experiencia en productos usados por miles de usuarios y organizaciones.",
-        "Base solida en frontend, backend, mobile, APIs, DevOps y cloud.",
-        "Experiencia practica con SaaS, ciberseguridad, automatizacion, mobile, APIs, cloud y sistemas legados.",
-        "Enfoque consultivo para entender procesos, prioridades y retorno antes de implementar."
-      ]
-    },
-    servicesTitle: "Servicios para empresas que quieren operar mejor",
-    services: [
-      ["Landing pages de alta conversion", "Paginas rapidas, persuasivas y preparadas para convertir visitantes en contactos calificados.", Globe2],
-      ["Sistemas de agenda", "Flujos para clinicas, consultorios, talleres, gimnasios y servicios locales que reducen mensajes manuales.", CalendarCheck],
-      ["CRM simple", "Control de leads, clientes, etapas, historial y proximas acciones sin planillas dispersas.", Layers3],
-      ["Dashboards gerenciales", "Indicadores claros para acompanhar ventas, agenda, inventario, finanzas y operacion.", BarChart3],
-      ["Integraciones con APIs", "Conexion entre pagos, ERPs, CRMs, WhatsApp, herramientas internas y bases de datos.", GitBranch],
-      ["Automatizacion de WhatsApp", "Atencion inicial, notificaciones, recordatorios y recoleccion de datos con menos retrabajo.", MessageCircle],
-      ["Sistemas a medida", "Aplicaciones web para procesos especificos que una herramienta lista no resuelve bien.", Code2],
-      ["Aplicaciones web", "Experiencias responsivas, seguras y listas para crecer con el negocio.", Smartphone]
-    ],
-    process: {
-      title: "Proceso claro, previsible y enfocado en resultados",
-      steps: [
-        ["Diagnostico", "Mapeo el problema, publico, flujo actual y criterio de exito."],
-        ["Propuesta", "Defino alcance, entregables, prioridades, plazo e inversion."],
-        ["Diseno y arquitectura", "Organizo experiencia, datos, integraciones y caminos criticos."],
-        ["Desarrollo", "Construyo en ciclos cortos, con checkpoints y ajustes objetivos."],
-        ["Entrega y evolucion", "Publico, acompanho metricas, corrijo fricciones y planifico mejoras."]
-      ]
-    },
-    projectsTitle: "Experiencia en productos y empresas reales",
-    projects: [
-      {
-        name: "Mosyle",
-        tag: "Ciberseguridad y Apple Device Management",
-        context: "Plataforma cloud-native para gestion y seguridad de dispositivos Apple.",
-        problem: "Productos globales necesitan evolucionar funcionalidades criticas sin comprometer estabilidad, seguridad y continuidad operativa.",
-        solution: "Actuacion full stack en funcionalidades, integraciones y modernizacion de base legada con foco en confiabilidad.",
-        results: "Contribucion en plataforma usada por mas de 60 mil organizaciones en mas de 100 paises.",
-        tech: ["React Native", "Node.js", "PHP", ".NET", "C#", "AWS", "Microservices"],
-        website: "https://mosyle.com/"
-      },
-      {
-        name: "SolarMarket",
-        tag: "SaaS y automatizacion para energia solar",
-        context: "Plataforma para integradores y distribuidores solares con procesos de venta, financiamiento, compras y simulacion.",
-        problem: "La operacion necesitaba escalar deploys, reducir costos y mejorar performance en flujos criticos.",
-        solution: "Actuacion full stack y DevOps con React, Vue, Node.js, NestJS, AWS, GCP, Docker, Kubernetes y Terraform.",
-        results: "Deploys 2x mas frecuentes, costos de infraestructura 30% menores y simulacion critica mas de 90% mas rapida.",
-        tech: ["TypeScript", "Node.js", "NestJS", "React", "Vue", "AWS", "GCP", "Kubernetes"],
-        website: "https://www.solarmarket.com.br/"
-      },
-      {
-        name: "Control 361",
-        tag: "Desarrollo full stack",
-        context: "Empresa de tecnologia y servicios digitales con demandas web, mobile e integraciones.",
-        problem: "Proyectos con diferentes stacks exigian velocidad de entrega y capacidad de actuar entre frontend, backend y mobile.",
-        solution: "Desarrollo full stack con React Native, Node.js, PHP, .NET y C#.",
-        results: "Entrega de funcionalidades en ambiente de producto y servicios, conectando experiencia de usuario y reglas de negocio.",
-        tech: ["React Native", "Node.js", "PHP", ".NET", "C#"],
-        website: "https://control361.com.br/"
-      },
-      {
-        name: "UNEX",
-        tag: "Experiencia internacional",
-        context: "Empresa con presencia digital en Argentina y demandas de tecnologia para negocios.",
-        problem: "Ambientes digitales exigen comunicacion clara, confiabilidad y evolucion continua.",
-        solution: "Experiencia aplicada en desarrollo y soporte a soluciones digitales con foco en usabilidad y mantenimiento.",
-        results: "Vivencia en contexto internacional, colaborando con productos y procesos orientados a operacion real.",
-        tech: ["Web", "Sistemas", "Procesos", "Integraciones"],
-        website: "https://unex.ar/"
-      }
-    ],
-    technologies: ["Next.js", "React", "React Native", "TypeScript", "Node.js", "NestJS", "Vue.js", "PHP", ".NET", "C#", "Python", "REST APIs", "GraphQL", "MySQL", "MongoDB", "AWS", "GCP", "Docker", "Kubernetes", "Terraform", "CI/CD", "Jest"],
-    testimonials: [
-      {
-        quote:
-          "Desarrollador dedicado, comprometido con la calidad de las entregas y responsable con metas y plazos.",
-        author: "Caique Rechi",
-        role: "Backend Developer PHP Pleno"
-      },
-      {
-        quote:
-          "Profesional excepcional, siempre dispuesto a ayudar y pieza clave en Desarrollo y DevOps.",
-        author: "Leonardo Henrique Da Silva Paixao",
-        role: "QA Engineer Pleno"
-      },
-      {
-        quote:
-          "Profesional versatil, con progreso notable y capacidad para actuar en back end, front end y mobile.",
-        author: "Jonathan Cardoso",
-        role: "Full Stack Software Engineer"
-      },
-      {
-        quote:
-          "Fundamental para el proyecto, guiando dudas del grupo y demostrando fuerte habilidad en JavaScript y React.",
-        author: "Arthur Barros",
-        role: "Full-Stack Developer"
-      }
-    ],
-    faq: [
-      ["Trabajas en proyectos pequenos?", "Si. Landing pages, automatizaciones y MVPs son excelentes puntos de partida cuando existe un problema claro."],
-      ["Trabajas con contrato mensual?", "Si. Puedo trabajar por proyecto cerrado o de forma recurrente para mantenimiento, mejoras y evolucion."],
-      ["Puedo integrar WhatsApp, CRM o mi sistema actual?", "En la mayoria de los casos, si. Primero evaluo la API, permisos, volumen y reglas del proceso."],
-      ["El sitio sera rapido y optimizado para SEO?", "Si. La base usa Next.js, metadata tecnica, estructura semantica, responsividad y buenas practicas de performance."]
-    ],
-    cta: {
-      title: "Vamos a simplificar un proceso que hoy le quita tiempo a tu equipo?",
-      body: "Cuentame donde la operacion se frena, que tareas siguen siendo manuales y que resultado quieres mejorar. Te ayudo a disenar una solucion objetiva.",
-      button: "Hablar por WhatsApp"
-    },
-    contact: {
-      title: "Solicita un presupuesto",
-      body: "Completa el formulario o escribeme directamente por WhatsApp. Cuanto mas contexto envies, mas precisa sera la propuesta.",
-      name: "Nombre",
-      email: "E-mail",
-      company: "Empresa",
-      message: "Cuentame sobre el proyecto",
-      submit: "Enviar por e-mail"
-    },
-    footer: "Desarrollado con Next.js, TypeScript, Tailwind CSS y foco en conversion."
+    footer: "Software engineering across application, infrastructure and production."
   }
-} satisfies Record<Locale, unknown>;
-
-export const capabilityIcons = [Rocket, Wrench, Workflow, Database, ShieldCheck, Bot];
+};

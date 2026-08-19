@@ -1,326 +1,201 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 import {
-  ArrowRight,
-  BriefcaseBusiness,
-  CheckCircle2,
-  ExternalLink,
-  Languages,
+  ArrowDown,
+  ArrowUpRight,
+  Check,
   Linkedin,
   Mail,
   MapPin,
-  MessageCircle,
-  Sparkles
+  MoveDown
 } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { ContactForm } from "@/components/sections/contact-form";
-import { TestimonialCarousel } from "@/components/sections/testimonial-carousel";
 import { FadeIn } from "@/components/common/motion";
-import { FloatingActions } from "@/components/common/floating-actions";
-import { content, locales, profile, type Locale } from "@/lib/content";
-import { whatsappUrl } from "@/lib/utils";
-
-const navIds = ["about", "services", "process", "projects", "faq", "contact"];
+import { TestimonialCarousel } from "@/components/sections/testimonial-carousel";
+import { content, profile, type Locale } from "@/lib/content";
 
 export function PortfolioPage({ locale }: { locale: Locale }) {
   const t = content[locale];
+  const otherLocale: Locale = locale === "pt" ? "en" : "pt";
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
-          <Link href={`/${locale}`} className="flex items-center gap-3 font-semibold">
-            <span className="flex size-9 items-center justify-center rounded-md bg-primary text-sm font-black text-[#120d05]">
-              TZ
-            </span>
-            <span className="hidden sm:inline">{profile.name}</span>
+      <a className="skip-link" href="#main">{locale === "pt" ? "Pular para o conteúdo" : "Skip to content"}</a>
+      <header className="masthead">
+        <div className="shell masthead-inner">
+          <Link href={`/${locale}`} className="wordmark" aria-label={`${profile.name} — home`}>
+            <span>TZ</span>
+            <span className="wordmark-name">{profile.name}</span>
           </Link>
-          <nav className="hidden items-center gap-1 lg:flex">
-            {t.nav.map((item, index) => (
-              <a key={item} href={`#${navIds[index]}`} className="rounded-md px-3 py-2 text-sm text-muted-foreground transition hover:bg-white/[0.06] hover:text-foreground">
-                {item}
-              </a>
-            ))}
+          <nav className="primary-nav" aria-label={locale === "pt" ? "Navegação principal" : "Primary navigation"}>
+            {t.nav.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
           </nav>
-          <div className="flex items-center gap-2">
-            <div className="hidden items-center gap-1 rounded-md border border-border bg-white/[0.03] p-1 sm:flex" aria-label="Language selector">
-              {locales.map((item) => (
-                <Link
-                  key={item}
-                  href={`/${item}`}
-                  className={`rounded px-2.5 py-1.5 text-xs font-semibold uppercase transition ${
-                    item === locale ? "bg-primary text-[#120d05]" : "text-muted-foreground hover:bg-white/[0.06] hover:text-foreground"
-                  }`}
-                >
-                  {item}
-                </Link>
-              ))}
-            </div>
-            <Button asChild variant="ghost" size="icon" aria-label="Languages">
-              <Link href={locale === "pt" ? "/en" : locale === "en" ? "/es" : "/pt"}>
-                <Languages className="size-5" />
-              </Link>
-            </Button>
-            <Button asChild className="hidden sm:inline-flex">
-              <a href="#contact">{t.hero.primaryCta}</a>
-            </Button>
+          <div className="header-actions">
+            <Link className="locale-switch" href={`/${otherLocale}`} hrefLang={otherLocale} aria-label={locale === "pt" ? "View in English" : "Ver em português"}>
+              <span aria-current="page">{locale.toUpperCase()}</span>
+              <span aria-hidden="true">/</span>
+              <strong>{otherLocale.toUpperCase()}</strong>
+            </Link>
+            <a className="icon-link" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <Linkedin aria-hidden="true" />
+            </a>
           </div>
         </div>
       </header>
 
-      <main>
-        <section className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
-          <FadeIn>
-            <Badge className="mb-6 text-primary">
-              <Sparkles className="mr-2 size-3.5" />
-              {t.hero.eyebrow}
-            </Badge>
-            <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-normal text-foreground sm:text-6xl lg:text-7xl">
-              {t.hero.title}
-            </h1>
-            <p className="mt-4 text-xl font-medium text-primary">{profile.role[locale]}</p>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">{t.hero.subtitle}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild>
-                <a href="#contact">
-                  {t.hero.primaryCta}
-                  <ArrowRight className="size-4" />
-                </a>
-              </Button>
-              <Button asChild variant="secondary">
-                <a href="#projects">{t.hero.secondaryCta}</a>
-              </Button>
+      <main id="main">
+        <section className="hero shell">
+          <FadeIn className="hero-copy">
+            <p className="eyebrow"><span className="status-dot" />{t.hero.eyebrow}</p>
+            <p className="hero-role">{profile.name} <span>/</span> {t.hero.role}</p>
+            <h1>{t.hero.title}</h1>
+            <p className="hero-summary">{t.hero.summary}</p>
+            <div className="button-row">
+              <a className="button button-primary" href="#experience">{t.hero.primaryCta}<ArrowDown aria-hidden="true" /></a>
+              <a className="button button-secondary" href="#work">{t.hero.secondaryCta}</a>
             </div>
-            <div className="mt-8 flex flex-wrap gap-4 text-sm text-muted-foreground">
-              <span className="inline-flex items-center gap-2">
-                <MapPin className="size-4 text-accent" />
-                {profile.location[locale]}
-              </span>
-              <a className="inline-flex items-center gap-2 hover:text-foreground" href={profile.linkedin} target="_blank" rel="noreferrer">
-                <Linkedin className="size-4 text-accent" />
-                LinkedIn
-              </a>
-              <a className="inline-flex items-center gap-2 hover:text-foreground" href={`mailto:${profile.email}`}>
-                <Mail className="size-4 text-accent" />
-                {profile.email}
-              </a>
-            </div>
+            <p className="availability"><MapPin aria-hidden="true" />{t.hero.availability}</p>
           </FadeIn>
 
-          <FadeIn delay={0.1}>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {t.hero.metrics.map(([value, label]) => (
-                <Card key={value} className="p-5">
-                  <p className="text-3xl font-semibold text-primary">{value}</p>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{label}</p>
-                </Card>
+          <FadeIn className="range-card" delay={0.1}>
+            <div className="range-head"><span>{t.hero.rangeLabel}</span><span>01—06</span></div>
+            <ol>
+              {t.hero.range.map((item, index) => (
+                <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong>{index < t.hero.range.length - 1 && <MoveDown aria-hidden="true" />}</li>
               ))}
-            </div>
-            <Card className="mt-4 p-5">
-              <div className="flex items-start gap-4">
-                <div className="rounded-md bg-accent/15 p-3 text-accent">
-                  <BriefcaseBusiness className="size-6" />
-                </div>
-                <div>
-                  <p className="font-semibold">Mosyle, SolarMarket, Control 361, UNEX</p>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                    {locale === "pt"
-                      ? "Experiencia em SaaS, ciberseguranca, microservicos, DevOps, mobile, sistemas legados e automacao."
-                      : locale === "es"
-                        ? "Experiencia en SaaS, ciberseguridad, microservicios, DevOps, mobile, sistemas legados y automatizacion."
-                        : "Experience across SaaS, cybersecurity, microservices, DevOps, mobile, legacy systems and automation."}
-                  </p>
-                </div>
-              </div>
-            </Card>
+            </ol>
+            <p>{t.hero.rangeNote}</p>
           </FadeIn>
         </section>
 
-        <Section id="about">
-          <FadeIn className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <section className="profile-section section shell" aria-labelledby="profile-title">
+          <FadeIn className="section-kicker"><p className="eyebrow">{t.summary.eyebrow}</p><span>01</span></FadeIn>
+          <FadeIn className="profile-content">
+            <h2 id="profile-title">{t.summary.title}</h2>
             <div>
-              <Badge>{t.about.eyebrow}</Badge>
-              <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{t.about.title}</h2>
+              <p className="lead">{t.summary.body}</p>
+              <ul className="principles">{t.summary.principles.map((item) => <li key={item}><Check aria-hidden="true" />{item}</li>)}</ul>
             </div>
-            <div>
-              <p className="text-lg leading-8 text-muted-foreground">{t.about.body}</p>
-              <div className="mt-8 grid gap-3">
-                {t.about.bullets.map((item) => (
-                  <div key={item} className="flex gap-3 text-sm leading-6 text-muted-foreground">
-                    <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
-                    <span>{item}</span>
-                  </div>
+          </FadeIn>
+        </section>
+
+        <section id="experience" className="section experience-section" aria-labelledby="experience-title">
+          <div className="shell">
+            <FadeIn className="section-kicker section-kicker-light"><p className="eyebrow">{t.experience.eyebrow}</p><span>02</span></FadeIn>
+            <FadeIn className="current-focus">
+              <div>
+                <p className="current-focus-label">{locale === "pt" ? "Foco atual" : "Current focus"}</p>
+                <h2 id="experience-title">{t.experience.title}</h2>
+              </div>
+              <div className="current-focus-copy">
+                <p>{t.experience.body}</p>
+                <ul>
+                  {t.experience.responsibilities.slice(0, 4).map((item) => <li key={item}><Check aria-hidden="true" />{item}</li>)}
+                </ul>
+              </div>
+            </FadeIn>
+            <FadeIn className="career-history">
+              <div className="career-history-heading">
+                <p className="eyebrow">{locale === "pt" ? "Trajetória" : "Career"}</p>
+                <h3>{t.experience.journeyTitle}</h3>
+                <p>{t.experience.journeyIntro}</p>
+              </div>
+              <div className="company-list">
+                {t.experience.companies.map((company, index) => (
+                  <article className="company-entry" key={company.name}>
+                    <div className="company-index">{String(index + 1).padStart(2, "0")}</div>
+                    <div className="company-name">
+                      <h4>{company.name}</h4>
+                      <p>{company.scope}</p>
+                    </div>
+                    <div className="company-description">
+                      <p>{company.context}</p>
+                      <p>{company.contribution}</p>
+                      <div className="company-technologies">
+                        {company.technologies.map((technology) => <span key={technology}>{technology}</span>)}
+                      </div>
+                    </div>
+                    <a href={company.website} target="_blank" rel="noreferrer" aria-label={`${company.name} website`}>
+                      <ArrowUpRight aria-hidden="true" />
+                    </a>
+                  </article>
                 ))}
               </div>
-            </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        <section id="work" className="section shell" aria-labelledby="work-title">
+          <FadeIn className="section-kicker"><p className="eyebrow">{t.cases.eyebrow}</p><span>03</span></FadeIn>
+          <FadeIn className="section-heading">
+            <h2 id="work-title">{t.cases.title}</h2><p>{t.cases.intro}</p>
           </FadeIn>
-        </Section>
+          <div className="case-list">
+            {t.cases.items.map((item, caseIndex) => (
+              <FadeIn className="case-study" key={item.number} delay={caseIndex * 0.04}>
+                <div className="case-title"><span>{item.number}</span><div><p>{item.label}</p><h3>{item.title}</h3></div></div>
+                <dl className="case-details">
+                  {[item.problem, item.ownership, item.impact].map((value, index) => <div key={t.cases.labels[index]}><dt>{t.cases.labels[index]}</dt><dd>{value}</dd></div>)}
+                </dl>
+                <div className="tag-row">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+              </FadeIn>
+            ))}
+          </div>
+        </section>
 
-        <Section id="services">
-          <FadeIn>
-            <h2 className="max-w-3xl text-3xl font-semibold sm:text-4xl">{t.servicesTitle}</h2>
-            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-              {t.services.map((service) => {
-                const [title, description, Icon] = service as [string, string, LucideIcon];
-
-                return (
-                  <Card key={title} className="p-5 transition hover:border-primary/40 hover:bg-white/[0.055]">
-                    <Icon className="size-6 text-primary" />
-                    <h3 className="mt-5 font-semibold">{title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">{description}</p>
-                  </Card>
-                );
-              })}
-            </div>
-          </FadeIn>
-        </Section>
-
-        <Section id="process">
-          <FadeIn>
-            <h2 className="max-w-3xl text-3xl font-semibold sm:text-4xl">{t.process.title}</h2>
-            <div className="mt-10 grid gap-4 lg:grid-cols-5">
-              {t.process.steps.map(([title, description], index) => (
-                <Card key={title} className="p-5">
-                  <span className="text-sm font-semibold text-primary">0{index + 1}</span>
-                  <h3 className="mt-4 font-semibold">{title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{description}</p>
-                </Card>
-              ))}
-            </div>
-          </FadeIn>
-        </Section>
-
-        <Section id="projects">
-          <FadeIn>
-            <h2 className="text-3xl font-semibold sm:text-4xl">{t.projectsTitle}</h2>
-            <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              {t.projects.map((project) => (
-                <Card key={project.name} className="p-6">
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <h3 className="text-2xl font-semibold">{project.name}</h3>
-                    <Badge>{project.tag}</Badge>
-                  </div>
-                  <dl className="mt-6 grid gap-4 text-sm leading-6">
-                    <ProjectRow label={locale === "pt" ? "Contexto" : locale === "es" ? "Contexto" : "Context"} value={project.context} />
-                    <ProjectRow label={locale === "pt" ? "Problema" : locale === "es" ? "Problema" : "Problem"} value={project.problem} />
-                    <ProjectRow label={locale === "pt" ? "Solucao" : locale === "es" ? "Solucion" : "Solution"} value={project.solution} />
-                    <ProjectRow label={locale === "pt" ? "Resultados" : locale === "es" ? "Resultados" : "Results"} value={project.results} />
-                  </dl>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <Badge key={tech}>{tech}</Badge>
-                    ))}
-                  </div>
-                  <div className="mt-6 flex gap-3">
-                    <Button asChild variant="secondary">
-                      <a href={project.website} target="_blank" rel="noreferrer">
-                        <ExternalLink className="size-4" />
-                        {locale === "pt" ? "Ver site" : locale === "es" ? "Ver sitio" : "Visit site"}
-                      </a>
-                    </Button>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </FadeIn>
-        </Section>
-
-        <Section id="technologies">
-          <FadeIn>
-            <h2 className="text-3xl font-semibold sm:text-4xl">Stack</h2>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {t.technologies.map((tech) => (
-                <Badge key={tech} className="px-3 py-2 text-sm text-foreground">
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-          </FadeIn>
-        </Section>
-
-        <Section id="testimonials">
-          <FadeIn>
-            <TestimonialCarousel testimonials={t.testimonials} locale={locale} />
-          </FadeIn>
-        </Section>
-
-        <Section id="faq">
-          <FadeIn>
-            <h2 className="text-3xl font-semibold sm:text-4xl">FAQ</h2>
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
-              {t.faq.map(([question, answer]) => (
-                <Card key={question} className="p-5">
-                  <h3 className="font-semibold">{question}</h3>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{answer}</p>
-                </Card>
-              ))}
-            </div>
-          </FadeIn>
-        </Section>
-
-        <Section id="cta">
-          <FadeIn>
-            <div className="rounded-lg border border-primary/25 bg-primary/[0.08] p-8 sm:p-10">
-              <h2 className="max-w-4xl text-3xl font-semibold sm:text-5xl">{t.cta.title}</h2>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{t.cta.body}</p>
-              <Button asChild className="mt-8">
-                <a href={whatsappUrl(locale)} target="_blank" rel="noreferrer">
-                  <MessageCircle className="size-4" />
-                  {t.cta.button}
-                </a>
-              </Button>
-            </div>
-          </FadeIn>
-        </Section>
-
-        <Section id="contact">
-          <FadeIn className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-            <div>
-              <h2 className="text-3xl font-semibold sm:text-4xl">{t.contact.title}</h2>
-              <p className="mt-4 text-lg leading-8 text-muted-foreground">{t.contact.body}</p>
-              <div className="mt-8 grid gap-3 text-sm text-muted-foreground">
-                <a href={`mailto:${profile.email}`} className="flex items-center gap-3 hover:text-foreground">
-                  <Mail className="size-5 text-primary" />
-                  {profile.email}
-                </a>
-                <a href={whatsappUrl(locale)} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-foreground">
-                  <MessageCircle className="size-5 text-primary" />
-                  {profile.phone}
-                </a>
+        <section className="section troubleshooting-section" aria-labelledby="troubleshooting-title">
+          <div className="shell">
+            <FadeIn className="section-kicker section-kicker-light"><p className="eyebrow">{t.troubleshooting.eyebrow}</p><span>04</span></FadeIn>
+            <FadeIn className="troubleshooting-copy"><h2 id="troubleshooting-title">{t.troubleshooting.title}</h2><p>{t.troubleshooting.body}</p></FadeIn>
+            <FadeIn className="trace-panel">
+              <div className="trace-panel-head"><span>{t.troubleshooting.traceLabel}</span><span>01 → 06</span></div>
+              <ol className="system-chain">
+                {t.troubleshooting.chain.map((item, index) => (
+                  <li key={item}>
+                    <span className="trace-number">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="trace-node" aria-hidden="true" />
+                    <strong>{item}</strong>
+                    <small>{t.troubleshooting.signals[index]}</small>
+                  </li>
+                ))}
+              </ol>
+              <div className="investigation-phases">
+                {t.troubleshooting.phases.map((phase, index) => (
+                  <div key={phase.title}><span>0{index + 1}</span><div><strong>{phase.title}</strong><p>{phase.description}</p></div></div>
+                ))}
               </div>
+              <p className="chain-note">{t.troubleshooting.note}</p>
+            </FadeIn>
+          </div>
+        </section>
+
+        <section id="capabilities" className="section shell" aria-labelledby="capabilities-title">
+          <FadeIn className="section-kicker"><p className="eyebrow">{t.capabilities.eyebrow}</p><span>05</span></FadeIn>
+          <FadeIn className="section-heading"><h2 id="capabilities-title">{t.capabilities.title}</h2></FadeIn>
+          <div className="capability-grid">
+            {t.capabilities.groups.map((group) => <FadeIn className="capability-group" key={group.title}><h3>{group.title}</h3><p>{group.description}</p><ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul></FadeIn>)}
+          </div>
+        </section>
+
+        <section id="proof" className="section proof-section shell" aria-labelledby="proof-title">
+          <FadeIn className="section-kicker"><p className="eyebrow">{t.proof.eyebrow}</p><span>06</span></FadeIn>
+          <FadeIn className="section-heading"><h2 id="proof-title">{t.proof.title}</h2><p>{t.proof.intro}</p></FadeIn>
+          <FadeIn><TestimonialCarousel testimonials={t.proof.quotes} locale={locale} /></FadeIn>
+        </section>
+
+        <section id="contact" className="contact-section" aria-labelledby="contact-title">
+          <FadeIn className="shell contact-inner">
+            <p className="eyebrow">{t.contact.eyebrow}</p>
+            <h2 id="contact-title">{t.contact.title}</h2>
+            <p>{t.contact.body}</p>
+            <div className="button-row">
+              <a className="button button-inverse" href={`mailto:${profile.email}`}><Mail aria-hidden="true" />{t.contact.email}</a>
+              <a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight aria-hidden="true" /></a>
+              <a className="text-link" href={profile.github} target="_blank" rel="noreferrer">GitHub <ArrowUpRight aria-hidden="true" /></a>
             </div>
-            <ContactForm locale={locale} labels={t.contact} />
           </FadeIn>
-        </Section>
+        </section>
       </main>
 
-      <footer className="border-t border-border py-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>{t.footer}</p>
-          <p>© {new Date().getFullYear()} {profile.name}</p>
-        </div>
-      </footer>
-      <FloatingActions locale={locale} />
+      <footer><div className="shell footer-inner"><p>© {new Date().getFullYear()} {profile.name}</p><p>{t.footer}</p><a href="#main">{locale === "pt" ? "Voltar ao topo" : "Back to top"} ↑</a></div></footer>
     </>
-  );
-}
-
-function Section({ id, children }: { id: string; children: ReactNode }) {
-  return (
-    <section id={id} className="mx-auto max-w-7xl scroll-mt-24 px-5 py-16 sm:py-20">
-      {children}
-    </section>
-  );
-}
-
-function ProjectRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <dt className="font-semibold text-foreground">{label}</dt>
-      <dd className="mt-1 text-muted-foreground">{value}</dd>
-    </div>
   );
 }
