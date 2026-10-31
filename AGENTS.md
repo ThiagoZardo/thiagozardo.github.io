@@ -86,7 +86,7 @@ Este documento transfere todo o contexto útil e verificável disponível no wor
 - O portfólio não deve parecer um catálogo genérico de serviços ou um template de freelancer.
 - Hero, resumo e primeira dobra devem comunicar responsabilidade de ponta a ponta em aplicação, backend, banco, integrações, infraestrutura e produção.
 - Experiência profissional deve aparecer antes de listas de tecnologias e projetos pessoais.
-- Confidential employer é o contexto profissional atual e mais aprofundado, mas Confidential employer, Mosyle, SolarMarket e Control 361 aparecem como quatro entradas de carreira com peso visual equivalente.
+- O empregador atual não deve ser identificado no conteúdo público. Mosyle, SolarMarket e Control 361 aparecem como três entradas de carreira com peso visual equivalente.
 - Casos selecionados: Sandbox Environment, Deployment Pipeline, Production Troubleshooting e Engineering Automation.
 - Cada caso deve seguir situação/problema → responsabilidade/ação → impacto qualitativo.
 - Agentes de IA e Claude Code devem aparecer como automação aplicada ao fluxo de engenharia, não como badges vazios.
@@ -95,7 +95,7 @@ Este documento transfere todo o contexto útil e verificável disponível no wor
 - Depoimentos reais do LinkedIn são preservados sem exagerar liderança formal.
 - Links diretos prioritários: LinkedIn, GitHub e e-mail.
 - Foram removidos da narrativa principal: catálogo de serviços, processo comercial genérico, FAQ, projetos de estudo concorrendo com experiência real e métricas não sustentadas pela especificação atual.
-- Não exponha endpoints internos, topologia, clientes, vulnerabilidades, segredos ou detalhes confidenciais de sistemas da Confidential employer ou de qualquer empresa.
+- Não exponha endpoints internos, topologia, clientes, vulnerabilidades, segredos ou detalhes confidenciais de sistemas de qualquer empresa.
 
 ## Direção visual consolidada
 
@@ -222,3 +222,9 @@ Não transforme esta seção em log detalhado de cada comando. Registre apenas d
 - Arquivos: `AGENTS.md`.
 - Verificação: estado Git inspecionado; `npm run typecheck`, `npm run lint` e `npm run build` passaram.
 - Observações pendentes: `.DS_Store` e `ThiagoZardo-profile/` continuam não rastreados e devem ser preservados até decisão explícita de Thiago.
+
+### 2026-10-30 — privacidade do vínculo profissional
+
+- Decisão: omitir a identidade do empregador atual no site e na documentação pública.
+- Arquivos: conteúdo bilíngue, documentação e exportação estática.
+- Verificação: busca por referências explícitas na versão publicada.
