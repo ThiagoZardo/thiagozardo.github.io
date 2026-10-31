@@ -67,7 +67,6 @@ Para transmitir mais credibilidade, a secao passou a destacar experiencia profis
 - Mosyle: https://mosyle.com/
 - SolarMarket: https://www.solarmarket.com.br/
 - Control 361: https://control361.com.br/
-- Confidential employer: #
 
 Cada card apresenta contexto, problema, solucao, resultados, tecnologias e link para o site oficial da empresa.
 

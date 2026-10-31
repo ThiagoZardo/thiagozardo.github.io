@@ -38,7 +38,6 @@ type PortfolioContent = {
   experience: {
     eyebrow: string;
     title: string;
-    company: string;
     scope: string;
     body: string;
     responsibilities: string[];
@@ -110,7 +109,6 @@ export const content: Record<Locale, PortfolioContent> = {
     experience: {
       eyebrow: "Perfil profissional",
       title: "Hoje, atuo onde software encontra operação.",
-      company: "Confidential employer",
       scope: "Software · Infrastructure · Production",
       body:
         "Hoje, minha atuação está especialmente próxima de backend, aplicações web e mobile, integrações financeiras, ambientes, deployments e operação. Sou frequentemente envolvido quando um problema exige conectar sinais de diferentes camadas e conduzir a solução até produção.",
@@ -124,16 +122,8 @@ export const content: Record<Locale, PortfolioContent> = {
       ],
       note: "Responsabilidade técnica real, sem transformar colaboração informal em um cargo de liderança.",
       journeyTitle: "Uma trajetória entre produto, plataforma e operação.",
-      journeyIntro: "Quatro contextos diferentes, com o mesmo fio condutor: assumir problemas reais, navegar entre camadas e conectar decisões de produto à operação.",
+      journeyIntro: "Diferentes contextos, com o mesmo fio condutor: assumir problemas reais, navegar entre camadas e conectar decisões de produto à operação.",
       companies: [
-        {
-          name: "Confidential employer",
-          scope: "Software · Infrastructure · Production",
-          context: "Operação com aplicações web e mobile, backend, integrações financeiras, ambientes e serviços em produção.",
-          contribution: "Criação de Sandbox, evolução da esteira de deployment, troubleshooting ponta a ponta, testes, segurança e automações com agentes de IA.",
-          technologies: ["Node.js", "TypeScript", "React", "React Native", "AWS", "CI/CD", "MySQL"],
-          website: "#"
-        },
         {
           name: "Mosyle",
           scope: "Full Stack · Cybersecurity · Apple Device Management",
@@ -277,7 +267,6 @@ export const content: Record<Locale, PortfolioContent> = {
     experience: {
       eyebrow: "Professional profile",
       title: "Today, I work where software meets operations.",
-      company: "Confidential employer",
       scope: "Software · Infrastructure · Production",
       body: "Today, my work is especially close to backend, web and mobile applications, financial integrations, environments, deployments and operations. I am often involved when a problem requires connecting signals across layers and driving the solution through production.",
       responsibilities: [
@@ -290,16 +279,8 @@ export const content: Record<Locale, PortfolioContent> = {
       ],
       note: "Real technical responsibility, without turning informal collaboration into a leadership title.",
       journeyTitle: "A career across product, platform and operations.",
-      journeyIntro: "Four different contexts with the same throughline: owning real problems, moving across layers and connecting product decisions to operations.",
+      journeyIntro: "Different contexts with the same throughline: owning real problems, moving across layers and connecting product decisions to operations.",
       companies: [
-        {
-          name: "Confidential employer",
-          scope: "Software · Infrastructure · Production",
-          context: "An operation spanning web and mobile applications, backend, financial integrations, environments and production services.",
-          contribution: "Built a Sandbox environment, evolved the deployment pipeline, handled end-to-end troubleshooting, and advanced testing, security and AI-agent automation.",
-          technologies: ["Node.js", "TypeScript", "React", "React Native", "AWS", "CI/CD", "MySQL"],
-          website: "#"
-        },
         {
           name: "Mosyle",
           scope: "Full Stack · Cybersecurity · Apple Device Management",

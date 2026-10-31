@@ -17,7 +17,7 @@ AND access experience, LinkedIn, GitHub and email paths.
 ```gherkin
 GIVEN a visitor reviews professional evidence
 WHEN they reach the experience and selected work sections
-THEN Confidential employer is the primary context
+THEN engineering responsibilities are the primary context
 AND Mosyle, SolarMarket and Control 361 remain visible as professional experience
 AND Sandbox and deployment pipeline responsibilities are explicit
 AND testing, troubleshooting, security and AI automation are represented

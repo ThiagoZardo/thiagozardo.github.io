@@ -7,7 +7,7 @@ In less than 20 seconds, a technical recruiter should understand that Thiago own
 ## Message hierarchy
 
 1. Role and end-to-end scope.
-2. Current production responsibility at Confidential employer.
+2. Current production responsibility without identifying the current employer.
 3. Four concrete engineering cases.
 4. Troubleshooting model and collaboration evidence.
 5. Grouped tools used to deliver that work.
@@ -38,11 +38,15 @@ Confidential details are abstracted. Security is described only as identificatio
 
 ## Project review
 
-- Current Confidential employer work: KEEP as the basis of the current-focus summary and selected engineering cases, without visually ranking the company above the rest of the career.
+- Current engineering work: KEEP as the basis of the current-focus summary and selected engineering cases, without visually ranking the company above the rest of the career.
 - Sandbox Environment: KEEP as a flagship case.
 - Deployment Pipeline: KEEP as a flagship case.
 - Production Troubleshooting: KEEP as a capability case.
 - Engineering Automation with Claude Code: KEEP as a differentiator.
 - Financial integrations: mention inside scope, not as an unsupported standalone case.
-- Confidential employer, Mosyle, SolarMarket and Control 361: KEEP with equal visual weight in the professional experience sequence. Each receives context, applied contribution, technology scope and an external link. Selected current engineering work remains a separate section.
+- Mosyle, SolarMarket and Control 361: KEEP with equal visual weight in the professional experience sequence. Each receives context, applied contribution, technology scope and an external link. Selected current engineering work remains a separate section.
 - Academic/basic public projects: MOVE TO LABS or REMOVE; not shown on the landing page.
+
+## Employer privacy
+
+Do not identify the current employer in public content, links, documentation or screenshots.

@@ -15,7 +15,7 @@ Source of truth: PRD dated 2026-08-19
 
 - Positioning: headline and CTAs suggest a service vendor rather than a Software Engineer responsible for production systems.
 - Hierarchy: generic services and process precede engineering responsibility.
-- Evidence: Confidential employer is represented by a generic company card; Sandbox, deployment pipeline, quality evolution, troubleshooting and AI-assisted automation are absent.
+- Evidence: The current employer is represented by a generic company card; Sandbox, deployment pipeline, quality evolution, troubleshooting and AI-assisted automation are absent.
 - Content: technology lists and historical company names carry more weight than applied engineering outcomes.
 - Conversion: “request a quote” narrows the audience and weakens recruitment use cases.
 - Credibility risk: old quantitative claims are not supported by this PRD and must not be repeated.
@@ -25,7 +25,7 @@ Source of truth: PRD dated 2026-08-19
 
 - Clear role: Software Engineer — Full Stack, Backend & Cloud/DevOps.
 - Professional summary based on end-to-end ownership.
-- Prominent current Confidential employer experience.
+- Prominent current engineering experience.
 - Case studies using problem → responsibility → solution → qualitative impact.
 - Applied troubleshooting narrative across mobile, API, business logic, database, integrations and infrastructure.
 - AI agents as engineering workflow automation, not a tool badge.
@@ -50,7 +50,7 @@ Source of truth: PRD dated 2026-08-19
 ## Opportunities
 
 - Preserve the reliable static-export architecture and redesign incrementally.
-- Turn the hero into a fast “responsibility map” and the Confidential employer work into the central evidence.
+- Turn the hero into a fast “responsibility map” and the engineering work into the central evidence.
 - Use an editorial layout, warm neutral background, deep ink typography, restrained cobalt accent and thin technical rules.
 - Reduce JavaScript and keep animation limited to accessible reveal transitions.
 
@@ -66,7 +66,7 @@ Source of truth: PRD dated 2026-08-19
 - FR-001: Present Thiago as a Software Engineer working across Full Stack, Backend, Cloud and DevOps.
 - FR-002: Communicate end-to-end ownership within the first viewport.
 - FR-003: Place professional experience before technology lists and personal projects.
-- FR-004: Give Confidential employer, Mosyle, SolarMarket and Control 361 equal visual weight as professional experience while using current Confidential employer responsibilities only to explain Thiago's present focus and selected engineering cases.
+- FR-004: Give Mosyle, SolarMarket and Control 361 equal visual weight as professional experience while using current engineering responsibilities only to explain Thiago's present focus and selected engineering cases.
 - FR-005: Present Sandbox Environment, Deployment Pipeline, Production Troubleshooting and Engineering Automation as selected engineering cases.
 - FR-006: Every case shall express situation/problem, responsibility/action and qualitative impact.
 - FR-007: Explain the quality evolution enabled by isolated validation and testing.
@@ -85,7 +85,7 @@ Source of truth: PRD dated 2026-08-19
 - NFR-003 Responsiveness: useful composition at 320, 375, 390, 430, 768, 1024, 1440 and 1920 px with no horizontal overflow.
 - NFR-004 SEO: unique localized metadata, canonical/alternate URLs, robots, sitemap, favicon, Open Graph and Person schema.
 - NFR-005 Maintainability: content remains separate from rendering and receives explicit TypeScript types.
-- NFR-006 Security: no confidential Confidential employer details or unsafe external-link behavior.
+- NFR-006 Security: no confidential employer details or unsafe external-link behavior.
 - NFR-007 Compatibility: `next build` produces a working `out/` export with `/`, `/pt/` and `/en/`.
 
 ## Section audit and disposition
@@ -94,7 +94,7 @@ Source of truth: PRD dated 2026-08-19
 - About: REWRITE — concise end-to-end problem ownership.
 - Services: REMOVE — conflicts with engineering/recruitment positioning.
 - Process: REPLACE — use a production troubleshooting chain.
-- Professional companies: KEEP/RESTRUCTURE — Confidential employer receives the deepest treatment, followed by Mosyle, SolarMarket and Control 361 in a dedicated career sequence.
+- Professional companies: KEEP/RESTRUCTURE — Mosyle, SolarMarket and Control 361 remain visible in a dedicated career sequence.
 - Stack: IMPROVE — grouped and secondary.
 - Testimonials: KEEP/REFINE — compact social proof.
 - FAQ: REMOVE — low value for target roles.

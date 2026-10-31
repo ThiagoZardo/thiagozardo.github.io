@@ -11,7 +11,7 @@ Date: 2026-08-19
 - Required assets: icon, Open Graph PNG, sitemap and robots generated.
 - Content assertions: Sandbox Environment and Deployment Pipeline present in exported localized HTML.
 - Career assertions: Mosyle, SolarMarket and Control 361 present in the PT/EN static export as professional experience.
-- Career balance: Confidential employer, Mosyle, SolarMarket and Control 361 render as four equal-weight entries; current work is separated into a profile-focus summary.
+- Career balance: Mosyle, SolarMarket and Control 361 render as three equal-weight entries; current work is separated into a profile-focus summary.
 - Troubleshooting composition: six connected layers and Observe/Isolate/Validate phases render in both locales.
 - Testimonial data: four attributed recommendations render in PT and EN.
 
@@ -26,7 +26,7 @@ Date: 2026-08-19
 - Redesigned experience and troubleshooting sections verified at 1440px and 390px with no horizontal overflow.
 - Recommendation carousel verified with automatic rotation, previous/next navigation, direct selection, interaction pause and reduced-motion handling.
 - Recommendation section verified at 1440px and 390px with no horizontal overflow.
-- Desktop and mobile screenshots saved in `docs/portfolio-desktop.png` and `docs/portfolio-mobile.png`.
+- Desktop and mobile screenshots saved in `docs/portfolio-desktop.png` and `docs/portfolio-mobile.png`. The previous career-list screenshot was removed from the public tree for privacy.
 
 ## Security and confidentiality
 
@@ -40,3 +40,10 @@ Date: 2026-08-19
 - `output: "export"`, unoptimized image behavior and trailing slashes remain enabled.
 - The generated `out/` directory contains root, PT and EN static routes with root-relative assets suitable for the existing user-site repository.
 - Publishing was not performed from this task; the current source/main branch deployment workflow remains the handoff point.
+
+## 2026-10-30 privacy update
+
+- The current employer is no longer named in localized content or public project documentation.
+- The career-list screenshot identifying the current employer was removed.
+- Typecheck, lint and production build passed.
+- Root, PT and EN exports retain three professional company entries.
